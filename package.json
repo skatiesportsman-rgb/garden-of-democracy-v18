@@ -1,0 +1,1 @@
+{"private":true,"type":"module","scripts":{"test:qa":"node --test tests/test_ask_garden.mjs tests/test_v15_stories.mjs"}}

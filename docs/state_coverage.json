@@ -1,0 +1,466 @@
+{
+  "generated_at": "2026-10-15T18:14:30Z",
+  "states": [
+    {
+      "state": "AL",
+      "name": "Alabama",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "AK",
+      "name": "Alaska",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "AZ",
+      "name": "Arizona",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "AR",
+      "name": "Arkansas",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "CA",
+      "name": "California",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "CO",
+      "name": "Colorado",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "CT",
+      "name": "Connecticut",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "DE",
+      "name": "Delaware",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "FL",
+      "name": "Florida",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "GA",
+      "name": "Georgia",
+      "poll_records": 1,
+      "state_legislative_records": 0,
+      "debate_records": 3,
+      "verified_state_poll_coverage": true,
+      "note": null
+    },
+    {
+      "state": "HI",
+      "name": "Hawaii",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "ID",
+      "name": "Idaho",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "IL",
+      "name": "Illinois",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "IN",
+      "name": "Indiana",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "IA",
+      "name": "Iowa",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "KS",
+      "name": "Kansas",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "KY",
+      "name": "Kentucky",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "LA",
+      "name": "Louisiana",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "ME",
+      "name": "Maine",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MD",
+      "name": "Maryland",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MA",
+      "name": "Massachusetts",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MI",
+      "name": "Michigan",
+      "poll_records": 3,
+      "state_legislative_records": 0,
+      "debate_records": 1,
+      "verified_state_poll_coverage": true,
+      "note": null
+    },
+    {
+      "state": "MN",
+      "name": "Minnesota",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MS",
+      "name": "Mississippi",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MO",
+      "name": "Missouri",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "MT",
+      "name": "Montana",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NE",
+      "name": "Nebraska",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NV",
+      "name": "Nevada",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NH",
+      "name": "New Hampshire",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NJ",
+      "name": "New Jersey",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NM",
+      "name": "New Mexico",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NY",
+      "name": "New York",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "NC",
+      "name": "North Carolina",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "ND",
+      "name": "North Dakota",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "OH",
+      "name": "Ohio",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "OK",
+      "name": "Oklahoma",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "OR",
+      "name": "Oregon",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "PA",
+      "name": "Pennsylvania",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "RI",
+      "name": "Rhode Island",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "SC",
+      "name": "South Carolina",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "SD",
+      "name": "South Dakota",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "TN",
+      "name": "Tennessee",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "TX",
+      "name": "Texas",
+      "poll_records": 1,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": true,
+      "note": null
+    },
+    {
+      "state": "UT",
+      "name": "Utah",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "VT",
+      "name": "Vermont",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "VA",
+      "name": "Virginia",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "WA",
+      "name": "Washington",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "WV",
+      "name": "West Virginia",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "WI",
+      "name": "Wisconsin",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "WY",
+      "name": "Wyoming",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    },
+    {
+      "state": "DC",
+      "name": "Washington, D.C.",
+      "poll_records": 0,
+      "state_legislative_records": 0,
+      "debate_records": 0,
+      "verified_state_poll_coverage": false,
+      "note": "No state-specific estimate inferred from national records"
+    }
+  ],
+  "national_poll_records": 5,
+  "state_poll_records": 5
+}

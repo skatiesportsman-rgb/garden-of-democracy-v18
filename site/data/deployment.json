@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "site_built_at": "2026-10-17T18:26:42Z",
+  "record_snapshot_generated_at": "2026-10-15T18:59:40Z",
+  "collection_outcome": "not-run",
+  "feed_freshness": "recent-success",
+  "source_status_counts": {
+    "operational": 4,
+    "temporarily-unavailable": 1,
+    "credentials-required": 1
+  },
+  "record_counts": {
+    "polls": 1916,
+    "finance": 200,
+    "legislation": 200,
+    "debates": 4,
+    "news": 0
+  },
+  "build_event": "local",
+  "source_commit": null,
+  "workflow_run_url": null,
+  "explanation": "Site build time does not mean all political records were newly published or successfully refreshed."
+}

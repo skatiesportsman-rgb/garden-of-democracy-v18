@@ -1,0 +1,85 @@
+[
+  {
+    "id": "fox-editorial",
+    "name": "Fox News Poll \u2014 editorially checked October 14, 2026 report",
+    "status": "verified-publication",
+    "last_success": "2026-10-15T14:00:00Z",
+    "url": "https://www.foxnews.com/politics/fox-news-poll-cost-living-concerns-weigh-gop-midterms"
+  },
+  {
+    "id": "pollresults",
+    "name": "PollResults.org structured poll feed",
+    "status": "temporarily-unavailable",
+    "last_success": null,
+    "url": "https://pollresults.org/",
+    "last_attempt": "2026-10-15T15:16:30Z",
+    "last_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+  },
+  {
+    "id": "votehub",
+    "name": "VoteHub polling API",
+    "status": "temporarily-unavailable",
+    "last_success": null,
+    "url": "https://votehub.com/polls/api/",
+    "last_attempt": "2026-10-15T15:16:25Z",
+    "last_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+  },
+  {
+    "id": "gdelt",
+    "name": "GDELT article metadata",
+    "status": "temporarily-unavailable",
+    "last_success": null,
+    "url": "https://www.gdeltproject.org/data.html",
+    "last_attempt": "2026-10-15T15:16:30Z",
+    "last_error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+    "notes": "Article metadata stream configured; external feed connectivity not yet verified from development environment."
+  },
+  {
+    "id": "fec",
+    "name": "Federal Election Commission OpenFEC",
+    "status": "credentials-required",
+    "last_success": null,
+    "url": "https://api.open.fec.gov/developers/",
+    "documentation": "https://api.open.fec.gov/developers/",
+    "notes": "2026 federal candidate-cycle totals adapter implemented and unit-tested; requires free FEC_API_KEY; not remotely validated."
+  },
+  {
+    "id": "congress",
+    "name": "Congress.gov legislative API",
+    "status": "credentials-required",
+    "last_success": null,
+    "url": "https://api.congress.gov/",
+    "notes": "119th Congress federal bill collector implemented and unit-tested; free CONGRESS_API_KEY required; network success not yet verified."
+  },
+  {
+    "id": "openstates",
+    "name": "OpenStates state-legislation API",
+    "status": "credentials-required",
+    "last_success": null,
+    "url": "https://docs.openstates.org/api-v3/",
+    "documentation": "https://v3.openstates.org/docs/",
+    "notes": "V9 state bill collector uses OPENSTATES_API_KEY as an HTTP header; default rotates four state/DC jurisdictions per scheduled run. Provider connection requires local or GitHub verification.",
+    "geographic_scope": "50 states and DC; rotating partial samples; not exhaustive coverage"
+  },
+  {
+    "id": "official-states",
+    "name": "Official state election offices",
+    "status": "not-integrated",
+    "last_success": null,
+    "url": "https://www.nass.org/can-I-vote/election-officials"
+  },
+  {
+    "id": "historical-mit",
+    "name": "MIT Election Data + Science Lab",
+    "status": "research-only",
+    "last_success": null,
+    "url": "https://electionlab.mit.edu/data"
+  },
+  {
+    "id": "geography",
+    "name": "Basemap US state boundaries + Census-derived US Atlas",
+    "status": "operational-static",
+    "last_success": null,
+    "url": "https://github.com/topojson/us-atlas"
+  }
+]

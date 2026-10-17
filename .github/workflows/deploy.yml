@@ -1,0 +1,139 @@
+name: Refresh civic data and publish garden
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Approximately every two hours. Scheduled runs may be delayed or skipped.
+    - cron: '23 */2 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: garden-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+      CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+      OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
+      HAS_DB: ${{ secrets.DATABASE_URL != '' }}
+    steps:
+      - name: Checkout application
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install -r requirements.txt pytest
+      - name: Verify code and pre-existing data
+        run: |
+          python -m py_compile worker/collect.py worker/postgres_sync.py server.py tools/build_deployment_manifest.py
+          node --check site/app.js
+          node --check site/civic-story.js
+          npm run test:qa
+          python -m pytest -q tests/test_pipeline.py tests/test_v5_layers.py tests/test_v6_integrations.py tests/test_v7_audit.py tests/test_v9_openstates.py tests/test_v17_restored_map.py::test_restored_map_source_contract tests/test_v18_launch.py
+          python worker/audit.py
+      - name: Cache geographic boundaries
+        # Fallback geometry is bundled; a failed remote download must not prevent
+        # a functioning garden from publishing.
+        continue-on-error: true
+        run: python tools/cache_state_boundaries.py
+      - name: Collect new authorized political records
+        id: collect
+        # An unavailable provider must not block publishing the last verified
+        # dataset. The public manifest reports partial or failed collection.
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          PROVIDERS='votehub,pollresults,fec,congress,openstates'
+          HOUR=$(date -u +%H)
+          if (( 10#$HOUR % 6 == 0 )); then
+            PROVIDERS="$PROVIDERS,gdelt"
+          fi
+          python worker/collect.py --providers "$PROVIDERS" --max-pages 2 | tee /tmp/garden-collection.json
+      - name: Verify collection outcome and publish timestamp
+        id: status
+        shell: bash
+        env:
+          COLLECT_STEP: ${{ steps.collect.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          status = 'failed' if os.environ['COLLECT_STEP'] != 'success' else 'success'
+          report = Path('/tmp/garden-collection.json')
+          if status == 'success':
+              try:
+                  payload = json.loads(report.read_text())
+                  if payload.get('failures'):
+                      status = 'partial'
+              except (OSError, ValueError):
+                  status = 'partial'
+          Path('/tmp/garden-collection-status').write_text(status)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('result='+status+'\n')
+          print('Verified data collection status:', status)
+          PY
+          python worker/audit.py
+          python tools/build_deployment_manifest.py --collection "$(cat /tmp/garden-collection-status)"
+          python tools/deployment_doctor.py
+          python worker/coverage.py
+      - name: Summarize public launch status
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          x=json.loads(Path('site/data/deployment.json').read_text())
+          print('## Garden of Democracy — deployment evidence')
+          print(f"- Collection: **{x['collection_outcome']}**")
+          print(f"- Static build: **{x['site_built_at']}**")
+          print(f"- Snapshot: **{x['record_snapshot_generated_at']}**")
+          for name,count in x['record_counts'].items():print(f'- {name}: {count}')
+          print('- Publishing success is not proof of fresh provider data.')
+          PY
+      - name: Optional private PostgreSQL mirror
+        if: ${{ env.HAS_DB == 'true' }}
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python -m pip install 'psycopg[binary]>=3.1,<4'
+          python worker/postgres_sync.py
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload complete static garden
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Commit refreshed public records for next run
+        # Website already published: a push conflict or restrictive repository
+        # permission should not change a successful deployment to a failure.
+        if: ${{ steps.deployment.outcome == 'success' }}
+        continue-on-error: true
+        shell: bash
+        run: |
+          git config user.name 'garden-data-bot'
+          git config user.email 'garden-data-bot@users.noreply.github.com'
+          git add site/data/snapshot.json site/data/coverage.json docs/state_coverage.json
+          if [ -f site/data/states-albers-10m.json ]; then git add site/data/states-albers-10m.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update source-validated civic data' && git push
+          fi
