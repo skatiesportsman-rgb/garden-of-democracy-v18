@@ -15,15 +15,18 @@ FIPS=['01','02','04','05','06','08','09','10','11','12','13','15','16','17','18'
 def test_restored_map_source_contract():
     js=(SITE/'app.js').read_text()
     css=(SITE/'style.css').read_text()
-    assert 'stateClipLayer(' not in js
-    assert 'statePoint(' not in js
-    assert 'fairMapPolls(' not in js
-    assert 'toShow.slice(0,36)' in js  # V11 original layout limit
-    assert 'const radius=17+Math.sqrt(n)*12' in js # V11 original event scattering
-    assert 'animation:livingBloom' in css # V11 flower motion retained
-    assert '#mapFlowers .flower-anchor' not in css
-    assert '/* Version 16 map visibility pass' not in css
-    assert 'import {civicQuestMarkup,mountCivicQuest}' in js # latest stories preserved
+    # Keep the Version 11 aesthetic and stories, but ensure evidence stays in a state.
+    assert 'statePoint(' in js
+    assert 'createStateSlots(' in js
+    assert 'stateLayer(' in js
+    assert "svgEl('clipPath'" in js
+    assert 'mapPollSelection()' in js
+    assert "class:'garden-flower flower-anchor'" in js
+    assert 'flower-stem-sway' in js
+    assert '@keyframes rootedWind' in css
+    assert '#mapFlowers .garden-flower{animation:none!important' in css
+    assert 'animation:financeDrift' not in css
+    assert 'import {civicQuestMarkup,mountCivicQuest}' in js
 
 
 def test_original_map_and_story_in_browser():
@@ -38,6 +41,16 @@ def test_original_map_and_story_in_browser():
         col=i%10;row=i//10;x=col*90;y=row*90
         arcs.append([[x,y],[78,0],[0,75],[-78,0],[0,-75]])
         geometries.append({'type':'Polygon','id':int(fips),'arcs':[[i]]})
+    # Test-only crowded state datasets; never included in published snapshots.
+    import copy
+    sample=payload['snapshot.json']['polls'][0]
+    for state in ('GA','TX','MI'):
+        for j in range(18):
+            rec=copy.deepcopy(sample)
+            rec.update(id=f'test-poll-{state}-{j}',state=state,published_at='2026-10-01',source_url='https://example.org/verified-poll',topic='Housing')
+            payload['snapshot.json']['polls'].append(rec)
+        for j in range(12):
+            payload['snapshot.json'].setdefault('finance',[]).append({'id':f'test-finance-{state}-{j}','state':state,'published_at':'2026-10-01','source_url':'https://example.org/filing','candidate':'Synthetic test candidate','topic':'Housing'})
     payload['states-albers-10m.json']={'type':'Topology','arcs':arcs,'objects':{'states':{'type':'GeometryCollection','geometries':geometries}}}
     with sync_playwright() as p:
         browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-dev-shm-usage'])
@@ -49,10 +62,37 @@ def test_original_map_and_story_in_browser():
             page.evaluate('code=>(0,eval)(code)',js)
             page.wait_for_function('document.querySelectorAll(".us-state").length===51', timeout=16000)
             assert page.locator('#mapFlowers .garden-flower').count()>0
-            assert page.locator('clipPath[id^="garden-state-"]').count()==0
-            assert page.locator('#mapFlowers .flower-anchor').count()==0
+            assert page.locator('clipPath[id^="garden-clip-"]').count()==51
+            assert page.locator('#mapFlowers .flower-anchor').count()>0
             assert page.locator('#mapEvents').count()==1
-            assert page.locator('#mapFlowers .garden-flower').first.evaluate('(el)=>getComputedStyle(el).animationName')!='none'
+            assert page.locator('#mapFlowers .garden-flower').first.evaluate('(el)=>getComputedStyle(el).animationName')=='none'
+            assert page.locator('#mapFlowers .flower-stem-sway').first.evaluate('(el)=>getComputedStyle(el).animationName')=='rootedWind'
+            # All anchor coordinates are inside the exact state clip geometry.
+            verification=page.evaluate("""() => {
+             const result={count:0,failed:[]};
+             for (const group of document.querySelectorAll('#mapFlowers [id^="state-layer-"] , #mapEvents [id^="state-layer-"]')) {
+              const code=group.id.split('-').at(-1);
+              const poly=document.querySelector(`#garden-clip-${code} path`);
+              for (const mark of group.children){
+               let x,y;
+               if(mark.classList.contains('flower-anchor')){
+                const m=mark.getAttribute('transform').match(/translate\\(([^ ]+) ([^)]+)\\)/);
+                x=+m[1];y=+m[2];
+               } else if (mark.tagName.toLowerCase()==='text') {x=+mark.getAttribute('x');y=+mark.getAttribute('y')}
+               else continue;
+               result.count++;
+               if(!poly.isPointInFill(new DOMPoint(x,y))) result.failed.push(`${code}: ${x},${y}`);
+              }
+             }
+             return result;
+            }""")
+            assert verification['count']>25,verification
+            assert not verification['failed'],verification
+            first=page.locator('#mapFlowers .flower-anchor').first
+            planted=first.get_attribute('transform')
+            page.wait_for_timeout(350)
+            assert first.get_attribute('transform')==planted
+
             page.locator('#layerPolls').uncheck()
             assert page.locator('#mapFlowers .garden-flower').count()==0
             page.locator('#layerPolls').check()

@@ -8,7 +8,8 @@ let deploymentInfo=null;
 let snapshot={polls:[],news:[],events:[],sources:[]}, states=[], mapReady=false, stateCenters=new Map();
 let currentView='garden', currentState='US', selectedTopic='all', compare=false, replayDate=null, audioCtx=null, audioEnabled=false;
 let harvestFilter='all';
-let flowerPos=[]; let lastAskResult=null; const svgNS='http://www.w3.org/2000/svg';
+let flowerPos=[]; let lastAskResult=null;
+const stateGeometry=new Map(), stateLayoutIndex=new Map(); const svgNS='http://www.w3.org/2000/svg';
 const FIPS={'01':'AL','02':'AK','04':'AZ','05':'AR','06':'CA','08':'CO','09':'CT','10':'DE','11':'DC','12':'FL','13':'GA','15':'HI','16':'ID','17':'IL','18':'IN','19':'IA','20':'KS','21':'KY','22':'LA','23':'ME','24':'MD','25':'MA','26':'MI','27':'MN','28':'MS','29':'MO','30':'MT','31':'NE','32':'NV','33':'NH','34':'NJ','35':'NM','36':'NY','37':'NC','38':'ND','39':'OH','40':'OK','41':'OR','42':'PA','44':'RI','45':'SC','46':'SD','47':'TN','48':'TX','49':'UT','50':'VT','51':'VA','53':'WA','54':'WV','55':'WI','56':'WY'};
 const topics=['Representation','Leadership','Affordability','Healthcare','Housing','Immigration','Education','Elections'];
 const issueIcons=['♧','✧','✺','✿','⌂','❈','♢','✳'];
@@ -29,19 +30,69 @@ function botanicalPalette(key=''){
  return hues[h%hues.length];
 }
 function drawFlower(parent,x,y,r,number=5,style='map',offset=0){
- const g=svgEl('g',{class:'garden-flower',transform:`translate(${x} ${y})`,role:'button',tabindex:'0','aria-label':'Inspect original poll'},parent);
+ // The anchor is NEVER animated. The root sits at local y=3.1*r;
+ // only the inner botanical stem+head rotates fractionally around that root.
+ const anchor=svgEl('g',{class:'garden-flower flower-anchor',transform:`translate(${x.toFixed(2)} ${y.toFixed(2)})`,role:'button',tabindex:'0','aria-label':'Inspect original poll'},parent);
+ const sway=svgEl('g',{class:'flower-stem-sway'},anchor);
+ sway.style.transformOrigin=`0px ${(r*3.1).toFixed(2)}px`;
+ sway.style.animationDelay=`${-offset}s`;
  const petalColor=botanicalPalette(String(offset));
- svgEl('path',{d:`M0 3 C${-r*.5} ${r*1.5} ${r*.85} ${r*2.1} ${r*.24} ${r*3.1}`,class:'botanical-stem',fill:'none',stroke:'#648668','stroke-width':1.8},g);
- svgEl('path',{d:`M0 ${r*1.6} Q${-r*1.9} ${r*.9} ${-r*1.35} ${r*2.1} Q${-r*.55} ${r*2.1} 0 ${r*1.6}`,fill:'#829c72',opacity:'.9'},g);
- svgEl('path',{d:`M${r*.24} ${r*2.5} Q${r*1.9} ${r*1.1} ${r*1.75} ${r*2.5} Q${r*1.1} ${r*3} ${r*.24} ${r*2.5}`,fill:'#749477'},g);
+ svgEl('path',{d:`M0 3 C${-r*.5} ${r*1.5} ${r*.85} ${r*2.1} ${r*.24} ${r*3.1}`,class:'botanical-stem',fill:'none',stroke:'#648668','stroke-width':1.8},sway);
+ svgEl('path',{d:`M0 ${r*1.6} Q${-r*1.9} ${r*.9} ${-r*1.35} ${r*2.1} Q${-r*.55} ${r*2.1} 0 ${r*1.6}`,fill:'#829c72',opacity:'.9'},sway);
+ svgEl('path',{d:`M${r*.24} ${r*2.5} Q${r*1.9} ${r*1.1} ${r*1.75} ${r*2.5} Q${r*1.1} ${r*3} ${r*.24} ${r*2.5}`,fill:'#749477'},sway);
  const n=Math.max(5,Math.min(9,number));
- for(let i=0;i<n;i++){const a=i*360/n;svgEl('ellipse',{cx:0,cy:-r*.69,rx:r*.43,ry:r*.72,transform:`rotate(${a})`,class:'flower-petal',fill:petalColor,stroke:'#f4dfd5','stroke-width':.7,opacity:'.94'},g)}
- svgEl('circle',{r:r*.39,class:'flower-center',fill:'#d6ac5e',stroke:'#f8e7b6','stroke-width':.9},g);
- g.style.animationDelay=offset+'s';return g;
+ for(let i=0;i<n;i++){const a=i*360/n;svgEl('ellipse',{cx:0,cy:-r*.69,rx:r*.43,ry:r*.72,transform:`rotate(${a})`,class:'flower-petal',fill:petalColor,stroke:'#f4dfd5','stroke-width':.7,opacity:'.94'},sway)}
+ svgEl('circle',{r:r*.39,class:'flower-center',fill:'#d6ac5e',stroke:'#f8e7b6','stroke-width':.9},sway);
+ return anchor;
+}
+
+// Geometry-aware map anchors; only true state-associated records produce map symbols.
+// Even-odd handles independent state islands and polygon holes without assigning a
+// mainland coordinate to Alaska, Hawaii or a multi-polygon jurisdiction.
+function insideState(rings,x,y){let inside=false;for(const ring of rings){for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+ const a=ring[i],b=ring[j];if((a[1]>y)!==(b[1]>y) && x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])inside=!inside;
+ }}return inside}
+function edgeDistance(rings,x,y){let best=Infinity;for(const ring of rings)for(let i=0,j=ring.length-1;i<ring.length;j=i++){
+ const a=ring[i],b=ring[j],dx=b[0]-a[0],dy=b[1]-a[1],length2=dx*dx+dy*dy;
+ const t=length2?Math.max(0,Math.min(1,((x-a[0])*dx+(y-a[1])*dy)/length2)):0;
+ const px=a[0]+t*dx,py=a[1]+t*dy;best=Math.min(best,Math.hypot(x-px,y-py));
+ }return best}
+function createStateSlots(code,rings){
+ const flat=rings.flat(),xs=flat.map(p=>p[0]),ys=flat.map(p=>p[1]);
+ const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ const samples=[];const divisions=22;
+ for(let yi=0;yi<divisions;yi++)for(let xi=0;xi<divisions;xi++){
+  const x=minX+(maxX-minX)*(xi+.5)/divisions,y=minY+(maxY-minY)*(yi+.5)/divisions;
+  if(insideState(rings,x,y))samples.push({x,y,clearance:edgeDistance(rings,x,y)});
+ }
+ if(!samples.length){for(const pt of flat)if(insideState(rings,pt[0]+.01,pt[1]+.01))samples.push({x:pt[0]+.01,y:pt[1]+.01,clearance:0});}
+ samples.sort((a,b)=>b.clearance-a.clearance);
+ const slots=[];
+ for(const candidate of samples){const sep=Math.min(29,Math.max(4,candidate.clearance*1.75));if(slots.every(p=>Math.hypot(p.x-candidate.x,p.y-candidate.y)>=sep))slots.push(candidate);if(slots.length>=24)break;}
+ return slots.length?slots:[{x:(minX+maxX)/2,y:(minY+maxY)/2,clearance:0}];
+}
+function statePoint(code){
+ const geometry=stateGeometry.get(code);if(!geometry)return stateCenters.get(code)||null;
+ const index=stateLayoutIndex.get(code)||0;stateLayoutIndex.set(code,index+1);
+ const slot=geometry.slots[index%geometry.slots.length];return [slot.x,slot.y];
+}
+function stateLayer(parent,code){
+ const id=`state-layer-${parent.id}-${code}`;
+ let group=document.getElementById(id);
+ if(!group)group=svgEl('g',{id,...(stateGeometry.has(code)?{'clip-path':`url(#garden-clip-${code})`}:{})},parent);
+ return group;
+}
+function mapPollSelection(){
+ const items=visiblePolls().filter(p=>p.state&&stateCenters.has(p.state)&&(selectedTopic==='all'||p.topic===selectedTopic));
+ if(currentState!=='US')return items.filter(p=>p.state===currentState).slice(0,20);
+ const buckets=new Map();for(const p of items){const a=buckets.get(p.state)||[];a.push(p);buckets.set(p.state,a)}
+ const selected=[];for(let round=0;round<5&&selected.length<95;round++)for(const key of [...buckets.keys()].sort()){
+  const p=buckets.get(key)[round];if(p)selected.push(p);
+ }return selected;
 }
 
 function fallbackProjection(lon,lat,code){if(code==='AK')return[170+(lon+151)*1.5,493-(lat-64)*3];if(code==='HI')return[275+(lon+157)*5,518-(lat-20.8)*7];const x=90+(lon+125)*14.1, y=100+(49.8-lat)*17.3;return[x,y]}
-function renderFallback(){const region=$('mapRegions'),label=$('mapLabels'),outline=$('mapOutline');region.replaceChildren();label.replaceChildren();outline.replaceChildren();fetch('./data/usa_coastline.json').then(r=>r.json()).then(c=>{for(const poly of (c.coordinates||[])){for(const ring of poly){if(!ring.length)continue;let d=ring.map(([lon,lat],i)=>{let [x,y]=fallbackProjection(lon,lat,(lon<-153&&lat<30?'HI':lon<-128?'AK':'US'));return (i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)}).join(' ')+' Z';svgEl('path',{d,stroke:'#729076','stroke-width':1,fill:'#dce9cf','fill-opacity':.5},outline)}}}).catch(()=>{});fetch('./data/state_lines.json').then(r=>r.json()).then(lines=>{const g=svgEl('g',{class:'offline-state-boundaries'},region);for(const line of lines){const d=line.map(([lon,lat],i)=>{const [x,y]=fallbackProjection(lon,lat,'US');return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');svgEl('path',{d,stroke:'#9eaa89','stroke-width':.9,'stroke-opacity':.7,fill:'none','pointer-events':'none'},g)}}).catch(()=>{});states.forEach(s=>{const[code,name,lat,lon]=s;let [x,y]=fallbackProjection(lon,lat,code),node=svgEl('circle',{cx:x,cy:y,r:code==='DC'?3.5:7,fill:'#b2c7a5',stroke:'#5b7d61','stroke-width':.8,opacity:.88,role:'button',tabindex:0,'aria-label':`Explore ${name}`},region);node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});stateCenters.set(code,[x,y]);if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ'].includes(code))svgEl('text',{x,y:y+18,class:'map-label'},label,code)});svgEl('text',{x:510,y:570,class:'map-fallback-text','text-anchor':'middle'},label,'Offline map: state boundaries and selectable centroids · shaded polygons load online');renderFlowers();}
+function renderFallback(){stateGeometry.clear();stateLayoutIndex.clear();$('stateClipDefs')?.replaceChildren();const region=$('mapRegions'),label=$('mapLabels'),outline=$('mapOutline');region.replaceChildren();label.replaceChildren();outline.replaceChildren();fetch('./data/usa_coastline.json').then(r=>r.json()).then(c=>{for(const poly of (c.coordinates||[])){for(const ring of poly){if(!ring.length)continue;let d=ring.map(([lon,lat],i)=>{let [x,y]=fallbackProjection(lon,lat,(lon<-153&&lat<30?'HI':lon<-128?'AK':'US'));return (i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)}).join(' ')+' Z';svgEl('path',{d,stroke:'#729076','stroke-width':1,fill:'#dce9cf','fill-opacity':.5},outline)}}}).catch(()=>{});fetch('./data/state_lines.json').then(r=>r.json()).then(lines=>{const g=svgEl('g',{class:'offline-state-boundaries'},region);for(const line of lines){const d=line.map(([lon,lat],i)=>{const [x,y]=fallbackProjection(lon,lat,'US');return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');svgEl('path',{d,stroke:'#9eaa89','stroke-width':.9,'stroke-opacity':.7,fill:'none','pointer-events':'none'},g)}}).catch(()=>{});states.forEach(s=>{const[code,name,lat,lon]=s;let [x,y]=fallbackProjection(lon,lat,code),node=svgEl('circle',{cx:x,cy:y,r:code==='DC'?3.5:7,fill:'#b2c7a5',stroke:'#5b7d61','stroke-width':.8,opacity:.88,role:'button',tabindex:0,'aria-label':`Explore ${name}`},region);node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});stateCenters.set(code,[x,y]);if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ'].includes(code))svgEl('text',{x,y:y+18,class:'map-label'},label,code)});svgEl('text',{x:510,y:570,class:'map-fallback-text','text-anchor':'middle'},label,'Offline map: state boundaries and selectable centroids · shaded polygons load online');renderFlowers();}
 // Decode TopoJSON geometry without third-party JavaScript. Geography from Census-derived US Atlas.
 function decodeTopology(topology){let arcs=(topology.arcs||[]).map(arc=>{let x=0,y=0;return arc.map(([dx,dy])=>{x+=dx;y+=dy;return [x,y]})});const t=topology.transform||{scale:[1,1],translate:[0,0]};const point=xy=>[xy[0]*t.scale[0]+t.translate[0],xy[1]*t.scale[1]+t.translate[1]];
  const ring=ids=>{let result=[];for(const id of ids){let a=arcs[id<0?~id:id];if(!a)continue;let v=id<0?[...a].reverse():a;result.push(...(result.length?v.slice(1):v).map(point))}return result};const polys=[];for(const g of(topology.objects?.states?.geometries||[])){let rings=[];for(const poly of(g.type==='Polygon'?[g.arcs]:g.arcs||[])){for(const rr of poly)rings.push(ring(rr))};const code=FIPS[String(g.id).padStart(2,'0')];if(code)polys.push({code,rings})}return polys}
@@ -49,17 +100,69 @@ async function renderRealMap(){try{const controller=new AbortController();const 
 for(const url of ['./data/states-albers-10m.json','https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json']){
   try{const r=await fetch(url,{signal:controller.signal});if(r.ok){topology=await r.json();break}}catch(error){if(controller.signal.aborted)throw error}
 }
-clearTimeout(timeout);if(!topology)throw Error('Topology unavailable');const p=decodeTopology(topology);if(p.length!==51)throw Error('Invalid state geometry: '+p.length);let xy=p.flatMap(z=>z.rings.flat());let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const v of xy){minX=Math.min(minX,v[0]);maxX=Math.max(maxX,v[0]);minY=Math.min(minY,v[1]);maxY=Math.max(maxY,v[1])}const W=900,H=460,scale=Math.min(W/(maxX-minX),H/(maxY-minY));const trans=xy=>[72+(xy[0]-minX)*scale,80+(xy[1]-minY)*scale];const region=$('mapRegions'),label=$('mapLabels');region.replaceChildren();label.replaceChildren();$('mapOutline').replaceChildren();stateCenters.clear();for(const item of p){const {code,rings}=item;const path=rings.filter(r=>r.length>2).map(r=>r.map((pt,i)=>{const[x,y]=trans(pt);return(i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ')+'Z').join(' ');const node=svgEl('path',{class:'us-state',d:path,'fill-rule':'evenodd','data-state':code,role:'button',tabindex:0,'aria-label':`Explore ${stateName(code)}`},region);node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});const all=rings.flat(),cx=all.reduce((s,p)=>s+p[0],0)/all.length,cy=all.reduce((s,p)=>s+p[1],0)/all.length;stateCenters.set(code,trans([cx,cy]));if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ','OH','CO','IL','VA','MT','AK','HI'].includes(code)){let [x,y]=stateCenters.get(code);svgEl('text',{x,y,class:'map-label'},label,code)}}mapReady=true;renderFlowers();showToast('All 50 state boundaries and D.C. loaded');}catch(err){mapReady=false;console.warn('Map boundary dataset unavailable; using fallback',err.message);renderFallback()}}
-function renderFlowers(){const flowers=$('mapFlowers'),stems=$('mapStems');flowers.replaceChildren();stems.replaceChildren();$('mapEvents')?.replaceChildren();const subset=pollList(),national=visiblePolls().filter(p=>!p.state&&(selectedTopic==='all'||p.topic===selectedTopic));const nationX=530,nationY=296;const toShow=currentState==='US'?visiblePolls().filter(p=>selectedTopic==='all'||p.topic===selectedTopic):allStatePolls(currentState).filter(p=>selectedTopic==='all'||p.topic===selectedTopic);flowerPos=[];if(!$('layerPolls').checked){$('canvasStatus').textContent='Poll flowers hidden · optional verified layers remain available';renderMapEvents();return;}
- toShow.slice(0,36).forEach((p,i)=>{const a=i*2.39996323,r=(i===0?0:28+Math.sqrt(i)*33);let x,y;if(p.state){const center=stateCenters.get(p.state)||[530,295];x=center[0]+Math.cos(a)*Math.min(28,r*.35);y=center[1]+Math.sin(a)*Math.min(28,r*.35)}else{x=nationX+Math.cos(a)*r;y=nationY+Math.sin(a)*r*.71}const g=drawFlower(flowers,x,y,8+(i%3)*2,(p.answers||[]).length+3,'map',i*.5);g.setAttribute('aria-label',`Open ${p.subject} poll from ${p.pollster}`);g.addEventListener('click',()=>showPoll(p));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPoll(p)}});flowerPos.push({x,y,poll:p})});
- const sourceCount=visiblePolls().length;$('canvasStatus').textContent=sourceCount?`${replayDate?'REPLAY '+fmt(replayDate)+' · ':''}${sourceCount} source-linked survey measurements · ${mapReady?'51 mapped jurisdictions':'offline state-centroid fallback'}`:'No poll feed available — garden environment is decorative';document.querySelectorAll('.us-state').forEach(el=>el.classList.toggle('selected',el.dataset.state===currentState));
- // Botanical paths represent only explicit shared issue taxonomy; never inferred voter sentiment.
- if($('layerRoots').checked){const groups=new Map();for(const f of flowerPos){if(!f.poll.topic)continue;const arr=groups.get(f.poll.topic)||[];arr.push(f);groups.set(f.poll.topic,arr)}for(const [topic,points] of groups){for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i];const vine=svgEl('path',{class:'data-vine',d:`M${a.x} ${a.y} Q${(a.x+b.x)/2} ${Math.min(a.y,b.y)-24} ${b.x} ${b.y}`,fill:'none',stroke:'var(--sea)','stroke-width':1.6,'stroke-opacity':.65,role:'button',tabindex:'0','aria-label':`Explore shared issue ${topic}`},stems);svgEl('title',{},vine,`Shared published-survey issue: ${topic}`);activateMapNode(vine,()=>showMapRecord('Issue vine',`These two published surveys both have the documented issue category “${topic}”. This is an index relationship, not a claim that the polls are comparable.`,null,'Understory',()=>switchView('issues')))}}}
- renderMapEvents();}
+clearTimeout(timeout);if(!topology)throw Error('Topology unavailable');const p=decodeTopology(topology);if(p.length!==51)throw Error('Invalid state geometry: '+p.length);let xy=p.flatMap(z=>z.rings.flat());let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const v of xy){minX=Math.min(minX,v[0]);maxX=Math.max(maxX,v[0]);minY=Math.min(minY,v[1]);maxY=Math.max(maxY,v[1])}const W=900,H=460,scale=Math.min(W/(maxX-minX),H/(maxY-minY));const trans=xy=>[72+(xy[0]-minX)*scale,80+(xy[1]-minY)*scale];const region=$('mapRegions'),label=$('mapLabels'),clips=$('stateClipDefs');
+region.replaceChildren();label.replaceChildren();clips.replaceChildren();$('mapOutline').replaceChildren();stateCenters.clear();stateGeometry.clear();
+for(const item of p){const {code,rings}=item;
+ const projected=rings.filter(r=>r.length>2).map(r=>r.map(trans));
+ const path=projected.map(r=>r.map((pt,i)=>(i?'L':'M')+pt[0].toFixed(1)+','+pt[1].toFixed(1)).join(' ')+'Z').join(' ');
+ const node=svgEl('path',{class:'us-state',d:path,'fill-rule':'evenodd','data-state':code,role:'button',tabindex:0,'aria-label':`Explore ${stateName(code)}`},region);
+ node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});
+ const clip=svgEl('clipPath',{id:`garden-clip-${code}`,clipPathUnits:'userSpaceOnUse'},clips);
+ svgEl('path',{d:path,'clip-rule':'evenodd','fill-rule':'evenodd'},clip);
+ const slots=createStateSlots(code,projected);stateGeometry.set(code,{rings:projected,slots});
+ stateCenters.set(code,[slots[0].x,slots[0].y]);
+ if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ','OH','CO','IL','VA','MT','AK','HI'].includes(code))svgEl('text',{x:slots[0].x,y:slots[0].y,class:'map-label'},label,code);
+}
+mapReady=true;renderFlowers();showToast('All 50 state boundaries and D.C. loaded');}catch(err){mapReady=false;console.warn('Map boundary dataset unavailable; using fallback',err.message);renderFallback()}}
+function renderFlowers(){
+ const flowers=$('mapFlowers'),stems=$('mapStems');flowers.replaceChildren();stems.replaceChildren();$('mapEvents')?.replaceChildren();
+ stateLayoutIndex.clear();flowerPos=[];
+ if(!$('layerPolls').checked){$('canvasStatus').textContent='Poll flowers hidden · other evidence layers remain available';renderMapEvents();return;}
+ const toShow=mapPollSelection();
+ toShow.forEach((p,i)=>{
+  const spot=statePoint(p.state);if(!spot)return;
+  const [x,y]=spot;
+  const g=drawFlower(stateLayer(flowers,p.state),x,y,8,(p.answers||[]).length+3,'map',i*.4);
+  g.dataset.recordState=p.state;g.setAttribute('aria-label',`Open ${p.subject} poll from ${p.pollster} in ${stateName(p.state)}`);
+  g.addEventListener('click',()=>showPoll(p));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPoll(p)}});
+  flowerPos.push({x,y,poll:p});
+ });
+ const sourceCount=visiblePolls().length,nationalCount=visiblePolls().filter(p=>!p.state).length;
+ $('canvasStatus').textContent=sourceCount?`${replayDate?'REPLAY '+fmt(replayDate)+' · ':''}${sourceCount} source-linked surveys · ${toShow.length} state-pinned flowers · ${nationalCount} national surveys in Pollarium`:'No poll feed available — garden environment is decorative';
+ document.querySelectorAll('.us-state').forEach(el=>el.classList.toggle('selected',el.dataset.state===currentState));
+ // A vine connects published records only within the same state and shared issue.
+ if($('layerRoots').checked){const groups=new Map();for(const f of flowerPos){if(!f.poll.topic)continue;const key=f.poll.state+':'+f.poll.topic;const a=groups.get(key)||[];a.push(f);groups.set(key,a)}
+  for(const [key,points] of groups){const code=key.split(':')[0],topic=key.split(':').slice(1).join(':');for(let i=1;i<points.length;i++){
+   const a=points[i-1],b=points[i];const vine=svgEl('path',{class:'data-vine',d:`M${a.x} ${a.y} Q${(a.x+b.x)/2} ${Math.min(a.y,b.y)-12} ${b.x} ${b.y}`,fill:'none',stroke:'var(--sea)','stroke-width':1.6,'stroke-opacity':.65,role:'button',tabindex:'0','aria-label':`Explore ${topic} in ${stateName(code)}`},stateLayer(stems,code));
+   svgEl('title',{},vine,`Shared published-survey issue: ${topic}`);activateMapNode(vine,()=>showMapRecord('Issue vine',`These two surveys in ${stateName(code)} share the issue category “${topic}”. This does not mean their results are comparable.`,null,'Understory',()=>switchView('issues')));
+  }}
+ }
+ renderMapEvents();
+}
+
 function activateMapNode(node,action){node.addEventListener('click',action);node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action()}})}
 function showMapRecord(title,description,url,category,action){$('detailTitle').textContent=title;$('detailIntro').textContent=description;$('detailsBody').innerHTML=`<div class="detail-sub">${esc(category)}</div><p class="detail-small">Information is tied to a source record. Decorative animation does not indicate additional observations.</p>${url?`<a class="detail-link" href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">Original source ↗</a>`:''}`;$('showLatest').textContent=action?'Explore related records ↗':'Explore all sources ↗';$('showLatest').onclick=action||(()=>switchView('sources'))}
 function mapDataRecords(){const cutoff=replayDate||new Date().toISOString().slice(0,10);const visible=r=>{const date=r.published_at||r.reported_at||r.filing_date||r.date||r.created_at;return Boolean(date)&&String(date).slice(0,10)<=cutoff};const inScope=r=>currentState==='US'||r.state===currentState;const topicOK=r=>selectedTopic==='all'||r.topic===selectedTopic||(Array.isArray(r.topics)&&r.topics.includes(selectedTopic));return {finance:(snapshot.finance||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),news:(snapshot.news||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),debates:(snapshot.debates||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),legislation:(snapshot.legislation||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url)} }
-function renderMapEvents(){const parent=$('mapEvents');if(!parent)return;parent.replaceChildren();const {finance,news,debates,legislation}=mapDataRecords();const configurations=[{key:'finance',records:$('layerFinance').checked?finance:[],className:'map-money',symbol:'♢',title:'Reported campaign finance',description:'A published filing or candidate-cycle aggregate, not a real-time transaction.',action:()=>switchView('finance')},{key:'news',records:$('layerNews').checked?news:[],className:'map-firefly',symbol:'✧',title:'Published political news',description:'Observed news coverage, not a representative public-opinion measurement.',action:()=>switchView('news')},{key:'debates',records:$('layerDebates').checked?debates:[],className:'map-butterfly',symbol:'🦋',title:'Documented debate',description:'A reported political debate. No winner is inferred.',action:()=>switchView('debates')},{key:'legislation',records:$('layerLegislation').checked?legislation:[],className:'map-legislation',symbol:'❧',title:'Legislative record',description:'Published government activity, not a measurement of support.',action:()=>switchView('issues')}];for(const cfg of configurations){const perState=new Map();for(const record of cfg.records.slice(0,120)){const n=perState.get(record.state)||0;perState.set(record.state,n+1);const coords=stateCenters.get(record.state);if(!coords)continue;const angle=n*2.39996323+(cfg.key==='finance'?0:cfg.key==='news'?1:cfg.key==='debates'?2:3);const radius=17+Math.sqrt(n)*12;const x=coords[0]+Math.cos(angle)*radius,y=coords[1]+Math.sin(angle)*radius;const node=svgEl('text',{x,y,class:cfg.className,role:'button',tabindex:'0','text-anchor':'middle','aria-label':`${cfg.title} in ${stateName(record.state)}`},parent,cfg.symbol);svgEl('title',{},node,`${cfg.title} · ${stateName(record.state)}`);activateMapNode(node,()=>showMapRecord(record.title||record.race||record.candidate||record.committee||cfg.title,`${cfg.description} Published ${fmt(record.published_at||record.reported_at||record.filing_date||record.date)}.`,record.source_url,cfg.title,cfg.action))}}const status=$('layerDataStatus');if(status)status.textContent=`MAP RECORDS · ${finance.length} finance · ${news.length} news · ${debates.length} debates · ${legislation.length} legislation. Only verified, dated, state-associated records appear; empty layers produce no event symbols.`}
+function renderMapEvents(){
+ const parent=$('mapEvents');if(!parent)return;parent.replaceChildren();
+ const {finance,news,debates,legislation}=mapDataRecords();
+ const configurations=[
+  {key:'finance',records:$('layerFinance').checked?finance:[],className:'map-money',symbol:'♢',title:'Reported campaign finance',description:'A published filing or candidate-cycle aggregate, not a real-time transaction.',action:()=>switchView('finance')},
+  {key:'news',records:$('layerNews').checked?news:[],className:'map-firefly',symbol:'✧',title:'Published political news',description:'Observed news coverage, not a representative public-opinion measurement.',action:()=>switchView('news')},
+  {key:'debates',records:$('layerDebates').checked?debates:[],className:'map-butterfly',symbol:'🦋',title:'Documented debate',description:'A reported political debate. No winner is inferred.',action:()=>switchView('debates')},
+  {key:'legislation',records:$('layerLegislation').checked?legislation:[],className:'map-legislation',symbol:'❧',title:'Legislative record',description:'Published government activity, not a measurement of support.',action:()=>switchView('issues')}
+ ];
+ for(const cfg of configurations){const perState=new Map();for(const record of cfg.records){
+  const n=perState.get(record.state)||0;if(n>=4)continue;
+  const position=statePoint(record.state);if(!position)continue;perState.set(record.state,n+1);
+  const [x,y]=position;
+  // No animated SVG transform for these glyphs. They are pinned to a state.
+  const node=svgEl('text',{x,y,class:cfg.className,role:'button',tabindex:'0','text-anchor':'middle','aria-label':`${cfg.title} in ${stateName(record.state)}`,'data-record-state':record.state},stateLayer(parent,record.state),cfg.symbol);
+  svgEl('title',{},node,`${cfg.title} · ${stateName(record.state)}`);
+  activateMapNode(node,()=>showMapRecord(record.title||record.race||record.candidate||record.committee||cfg.title,`${cfg.description} Published ${fmt(record.published_at||record.reported_at||record.filing_date||record.date)}.`,record.source_url,cfg.title,cfg.action));
+ }}
+ const status=$('layerDataStatus');if(status)status.textContent=`MAP RECORDS · ${finance.length} finance · ${news.length} news · ${debates.length} debates · ${legislation.length} legislation. State-associated evidence is pinned within borders; national records remain available in their source views.`;
+}
 
 function recordCard(p){return `<button class="record-card" data-poll="${esc(p.id)}"><span class="petal-icon">✿</span><span class="record-kicker">${esc(p.type||'Survey')} · ${p.state?esc(stateName(p.state)):'National'}</span><strong>${esc(p.subject||'Published observation')}</strong><span class="record-meta">${esc(p.pollster||p.source_name)} · ${fmt(p.published_at)}<br>${pollMetric(p)}</span></button>`}
 // Import journal: each entry is emitted only by a real collector insert or revision.
@@ -135,7 +238,7 @@ function bindParallelGardens(){
  selects[0].value='GA';selects[1].value='MI';renderJournal();paint();
 }
 
-function renderView(){const stage=$('mainCanvas');if(currentView==='garden'&&!compare){stage.innerHTML=`<div class="canvas-glow" aria-hidden="true"></div><svg id="gardenMap" viewBox="0 0 1020 620" role="img" aria-label="Interactive national garden map"><defs><filter id="softglow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="mapOutline"></g><g id="mapRegions"></g><g id="mapStems"></g><g id="mapEvents"></g><g id="mapFlowers"></g><g id="mapLabels"></g></svg><div class="canvas-top-note"><span class="mini-glow">●</span><span id="canvasStatus"></span></div><div class="canvas-bottom"><div class="legend"><span><i class="legend-dot" style="background:#cf9dce"></i> Survey</span><span><i class="legend-dot" style="background:#80d5c8"></i> State garden</span><span><i class="legend-dot" style="background:#e7c88b"></i> Ambient ≠ data</span></div><span class="gesture-hint">SELECT A STATE OR FLOWER ↗</span></div><div class="map-record-status" id="layerDataStatus" aria-live="polite"></div>`;renderRealMap();$('stageHeading').textContent=currentState==='US'?'The living garden':stateName(currentState)+' garden';$('stageSubheading').textContent=currentState==='US'?'A garden of published observations, not a prediction':'State evidence only: national survey figures are not localized';return}
+function renderView(){const stage=$('mainCanvas');if(currentView==='garden'&&!compare){stage.innerHTML=`<div class="canvas-glow" aria-hidden="true"></div><svg id="gardenMap" viewBox="0 0 1020 620" role="img" aria-label="Interactive national garden map"><defs><filter id="softglow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><defs id="stateClipDefs"></defs><g id="mapOutline"></g><g id="mapRegions"></g><g id="mapStems"></g><g id="mapEvents"></g><g id="mapFlowers"></g><g id="mapLabels"></g></svg><div class="canvas-top-note"><span class="mini-glow">●</span><span id="canvasStatus"></span></div><div class="canvas-bottom"><div class="legend"><span><i class="legend-dot" style="background:#cf9dce"></i> Survey</span><span><i class="legend-dot" style="background:#80d5c8"></i> State garden</span><span><i class="legend-dot" style="background:#e7c88b"></i> Ambient ≠ data</span></div><span class="gesture-hint">SELECT A STATE OR FLOWER ↗</span></div><div class="map-record-status" id="layerDataStatus" aria-live="polite"></div>`;renderRealMap();$('stageHeading').textContent=currentState==='US'?'The living garden':stateName(currentState)+' garden';$('stageSubheading').textContent=currentState==='US'?'A garden of published observations, not a prediction':'State evidence only: national survey figures are not localized';return}
  const header={polls:['The Pollarium','Original polls are preserved separately, never averaged by default.'],issues:['The Understory','Trace issues through independent evidence sources.'],legislation:['Legislative Understory','Documented federal and state legislative activity.'],debates:['Butterfly Conservatory','Documented candidate debates and their sourced records.'],timeline:['The Time Machine','Verified publications in time; not simulated live events.'],sources:['The Observatory','Inspect every data source and its actual status.'],news:['The Firefly Observatory','Published article metadata from selected news sources, never a voter survey.'],finance:['The Money Rain','Campaign finance requires documented records, not simulated droplets.'],results:['Election-Night Garden','Verified reported votes only, once the election begins.'],compare:['Parallel Gardens','Compare source coverage without inferring missing values.'],ask:['Ask the Garden','Evidence-backed answers, with adjustable depth.'],game:['The Stories We Grow','Choose a character and shape their civic story. No quizzes, no correct political outcomes.']}[compare?'compare':currentView]||['Living garden',''];$('stageHeading').textContent=header[0];$('stageSubheading').textContent=header[1];
  let html='';if(compare){const opts=states.map(s=>`<option value="${s[0]}">${esc(s[1])}</option>`).join('');html=`<div class="mode-content parallel-mode"><div class="panel-kicker">PARALLEL GARDENS · THE BOTANICAL FIELD JOURNAL</div><h2 class="mode-heading">A tale of two gardens.</h2><p class="mode-description">Walk through two living gardens grown from real political records. Tap flowers to examine polls, leaves for bills, and raindrops for finance; trace your findings in the field notebook. Garden scenery is decoration, never a fabricated event.</p><div class="garden-key" role="note" aria-label="How the garden represents evidence"><span>✿ <b>Flowers</b> · polls</span><span>❧ <b>Leaves</b> · bills</span><span>◌ <b>Raindrops</b> · finance</span><span>🦋 <b>Butterflies</b> · debates</span><span>✧ <b>Fireflies</b> · articles</span><small>Only source-backed records create these symbols. Grass, hills and sunlight are decorative.</small></div><div class="parallel-setup"><label>Explore an issue <select id="parallelTopic"><option value="all">Every documented issue</option>${topics.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('')}</select></label><button id="parallelShuffle" class="parallel-action" type="button">✿ Surprise me</button><button id="parallelReset" class="parallel-action" type="button">↺ Clear journal</button></div>${replayDate?`<div class="parallel-season-tag">ARCHIVE GARDEN · Records through ${esc(replayDate)} only</div>`:""}<div class="parallel-progress" aria-live="polite"><span id="parallelScore">0 of 4 evidence discoveries</span><div class="parallel-track"><span id="parallelProgressFill"></span></div></div><div class="comparison parallel-meadow">${[0,1].map((_,i)=>`<section class="comparison-card parallel-bed"><h3><span class="parallel-icon">❀</span> Garden ${i+1}</h3><label class="parallel-label" for="compare-${i}">Choose your state</label><select id="compare-${i}"><option value="">Choose state</option>${opts}</select><div id="compare-data-${i}"><p>Choose a state to reveal its sourced landscape.</p></div></section>`).join('')}</div><div id="parallelLedger" class="parallel-ledger" aria-label="Source coverage ledger"></div><div class="parallel-explorer" id="parallelExplorer"><h3>Follow the garden trails</h3><p class="mode-description">Earn four research discoveries by checking coverage, opening evidence, testing assumptions and exploring a historical season.</p><div id="parallelChallenges"></div><div id="parallelFeedback" role="status" aria-live="polite"></div></div><section class="parallel-notebook"><div><div class="panel-kicker">YOUR FIELD NOTEBOOK</div><h3>Evidence gathered along the path</h3><p>Tap a source-backed botanical element to save a field note for this visit. Links open the original reporting or public record.</p></div><ol id="parallelJournal" aria-live="polite"></ol></section></div>`}
 

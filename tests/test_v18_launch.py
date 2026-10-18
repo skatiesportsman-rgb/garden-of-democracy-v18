@@ -65,6 +65,8 @@ def test_workflow_keeps_pages_upload_and_source_checks_separate():
 
 def test_launch_does_not_change_preferred_original_map_or_story():
     js = (ROOT/'site/app.js').read_text()
-    assert 'toShow.slice(0,36)' in js
+    assert 'mapPollSelection()' in js
+    assert 'statePoint(' in js
+    assert 'flower-stem-sway' in js
     assert 'stateClipLayer(' not in js
     assert 'The Stories We Grow' in js

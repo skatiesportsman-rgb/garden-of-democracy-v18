@@ -16,12 +16,15 @@ def test_map_data_layers_present():
     assert 'snapshot.debates' in JS and 'snapshot.legislation' in JS
 
 def test_vines_share_topic_only():
-    assert 'groups.get(f.poll.topic)' in JS
+    assert "const key=f.poll.state+':'+f.poll.topic" in JS
+    assert 'groups.get(key)' in JS
+    assert 'stateLayer(stems,code)' in JS
     assert 'Shared published-survey issue' in JS
     assert 'flowerPos[i-1]' not in JS
 
 def test_empty_data_is_honest():
-    assert 'Only verified, dated, state-associated records appear' in JS
+    assert 'State-associated evidence is pinned within borders' in JS
+    assert 'mapPollSelection()' in JS
     assert 'A published filing or candidate-cycle aggregate' in JS
     assert 'not a representative public-opinion measurement' in JS
 
