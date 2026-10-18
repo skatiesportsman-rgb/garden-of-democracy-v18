@@ -20,8 +20,13 @@ test('candidate debates are returned for named state',()=>{
  assert.ok(a.evidence.length>0);assert.ok(a.evidence.every(x=>x.type==='debates'));
 });
 test('no hallucinated legislative facts when the archive is empty',()=>{
- const a=answer('What legislation is recorded?');
- assert.equal(a.evidence.length,0);assert.equal(a.insufficient,true);
+ const a=askGarden(
+   {...data, legislation: []},
+   'What legislation is recorded?',
+   {states, level:'standard', cutoff:'2026-10-15'}
+ );
+ assert.equal(a.evidence.length,0);
+ assert.equal(a.insufficient,true);
 });
 test('no election forecast or invented debate winner',()=>{
  assert.match(answer('Who will win Georgia?').answer,/does not predict election winners/);
