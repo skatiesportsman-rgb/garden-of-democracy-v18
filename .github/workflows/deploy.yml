@@ -1,4 +1,4 @@
-name: Refresh civic data and publish garden
+       name: Refresh civic data and publish garden
 on:
   push:
     branches: [main]
@@ -139,3 +139,4 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Update source-validated civic data' && git push
           fi
+          
