@@ -38,6 +38,8 @@ jobs:
           python-version: '3.12'
       - name: Install test dependencies
         run: python -m pip install -r requirements.txt pytest
+      - name: Synchronize published metadata with the imported snapshot
+        run: python tools/build_deployment_manifest.py --collection not-run
       - name: Verify code and pre-existing data
         run: |
           python -m py_compile worker/collect.py worker/postgres_sync.py server.py tools/build_deployment_manifest.py
