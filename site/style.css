@@ -310,5 +310,78 @@ body:has(#reducedMotion:checked) .story-experience *{animation:none!important;tr
    Older global flower animations may not move the planted SVG group. */
 #mapFlowers .garden-flower{animation:none!important;transform-origin:initial!important;scale:1!important;rotate:0deg!important}
 #mapFlowers .flower-stem-sway{animation:rootedWind calc(6.8s / var(--garden-motion, 1)) ease-in-out infinite!important}
-#mapEvents .map-money,#mapEvents .map-firefly,#mapEvents .map-butterfly,#mapEvents .map-legislation{animation-name:evidenceBreathe!important;transform:none!important}
+#mapEvents text.map-money,#mapEvents text.map-firefly{animation-name:evidenceBreathe!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){#mapFlowers .flower-stem-sway,#mapFlowers .flower-petal,#mapStems .data-vine,#mapEvents .map-money,#mapEvents .map-firefly,#mapEvents .map-butterfly,#mapEvents .map-legislation{animation:none!important}}
+
+
+/* WIND & WINGS · Version 18 interactive garden refinement.
+   Geographical positions are never moved; only bounded interior artwork animates. */
+@keyframes rootedWind{
+  0%,100%{transform:rotate(-3.2deg)}
+  22%{transform:rotate(-.9deg)}
+  54%{transform:rotate(3.6deg)}
+  77%{transform:rotate(1deg)}
+}
+#mapFlowers .flower-stem-sway{
+  animation:rootedWind calc(5.4s / var(--garden-motion, 1)) ease-in-out infinite!important;
+}
+@keyframes butterflyFlight{
+  0%{opacity:0;transform:translate(calc(var(--fly-range) * -.8),calc(var(--fly-range) * .48))}
+  11%{opacity:1}
+  23%{transform:translate(calc(var(--fly-range) * -.25),calc(var(--fly-range) * -.72))}
+  43%{transform:translate(calc(var(--fly-range) * .72),calc(var(--fly-range) * -.18))}
+  62%{opacity:1;transform:translate(calc(var(--fly-range) * -.25),calc(var(--fly-range) * .72))}
+  78%{opacity:0;transform:translate(calc(var(--fly-range) * .60),calc(var(--fly-range) * -.40))}
+  100%{opacity:0;transform:translate(calc(var(--fly-range) * .60),calc(var(--fly-range) * -.40))}
+}
+@keyframes butterflyFlap{
+  0%,100%{transform:scaleX(1)}50%{transform:scaleX(.68)}
+}
+#mapEvents g.map-butterfly,#mapEvents g.map-legislation{cursor:pointer;outline:none}
+#mapEvents .butterfly-flight{
+  animation:butterflyFlight calc(9.5s / var(--garden-motion, 1)) ease-in-out infinite;
+  animation-delay:var(--flight-delay,0s);
+  pointer-events:visiblePainted;
+}
+#mapEvents .butterfly-flutter{
+  animation:butterflyFlap calc(.42s / var(--garden-motion, 1)) ease-in-out infinite;
+  transform-origin:center;transform-box:fill-box;
+}
+#mapEvents .butterfly-wing{fill:#86a3ad;stroke:#e3eeee;stroke-width:.55}
+#mapEvents .wing-right{fill:#658ea3}
+#mapEvents .butterfly-body,#mapEvents .butterfly-antennae{fill:none;stroke:#526b70;stroke-width:1.1;stroke-linecap:round}
+@keyframes legislationGrow{
+  0%,9%{opacity:0;transform:scale(.48)}
+  19%{opacity:1;transform:scale(.9)}
+  30%,73%{opacity:1;transform:scale(1)}
+  87%,100%{opacity:0;transform:scale(.88)}
+}
+#mapEvents .legislation-grow{
+  animation:legislationGrow calc(10s / var(--garden-motion, 1)) ease-in-out infinite;
+  animation-delay:var(--leaf-delay,0s);
+  transform-box:fill-box;transform-origin:center bottom;
+}
+#gardenMap .us-state{cursor:pointer;transition:fill .2s,fill-opacity .2s,opacity .2s}
+#gardenMap.map-focus-state .us-state:not(.selected){opacity:.54}
+#gardenMap .us-state:focus-visible{stroke:#54745a;stroke-width:2.5;outline:none;filter:drop-shadow(0 0 3px #fff)}
+#mapEvents g.map-butterfly:hover .butterfly-wing,
+#mapEvents g.map-butterfly:focus-visible .butterfly-wing{fill:#c88c9e;stroke-width:1.1}
+#mapEvents g.map-legislation:hover .legislation-grow,
+#mapEvents g.map-legislation:focus-visible .legislation-grow{filter:drop-shadow(0 0 3px #668e70)}
+.map-peek{position:absolute;z-index:18;max-width:218px;min-width:175px;pointer-events:none;
+  padding:10px 12px;border:1px solid #aec5ab;border-radius:11px;
+  background:#fffdf2f5;color:#3d5543;box-shadow:0 7px 25px #53645144;
+  font:12px/1.5 'DM Sans',sans-serif;overflow-wrap:anywhere}
+.map-peek strong,.map-peek span{display:block}
+.map-peek strong{font:700 14px/1.2 Georgia,serif;margin-bottom:5px}
+.map-peek[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){
+ #mapEvents .butterfly-flight,#mapEvents .butterfly-flutter,#mapEvents .legislation-grow,
+ #mapFlowers .flower-stem-sway{animation:none!important;opacity:1!important;transform:none!important}
+}
+body:has(#reducedMotion:checked) #mapEvents .butterfly-flight,
+body:has(#reducedMotion:checked) #mapEvents .butterfly-flutter,
+body:has(#reducedMotion:checked) #mapEvents .legislation-grow,
+body:has(#reducedMotion:checked) #mapFlowers .flower-stem-sway{
+ animation:none!important;opacity:1!important;transform:none!important
+}

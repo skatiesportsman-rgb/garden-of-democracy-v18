@@ -92,7 +92,7 @@ function mapPollSelection(){
 }
 
 function fallbackProjection(lon,lat,code){if(code==='AK')return[170+(lon+151)*1.5,493-(lat-64)*3];if(code==='HI')return[275+(lon+157)*5,518-(lat-20.8)*7];const x=90+(lon+125)*14.1, y=100+(49.8-lat)*17.3;return[x,y]}
-function renderFallback(){stateGeometry.clear();stateLayoutIndex.clear();$('stateClipDefs')?.replaceChildren();const region=$('mapRegions'),label=$('mapLabels'),outline=$('mapOutline');region.replaceChildren();label.replaceChildren();outline.replaceChildren();fetch('./data/usa_coastline.json').then(r=>r.json()).then(c=>{for(const poly of (c.coordinates||[])){for(const ring of poly){if(!ring.length)continue;let d=ring.map(([lon,lat],i)=>{let [x,y]=fallbackProjection(lon,lat,(lon<-153&&lat<30?'HI':lon<-128?'AK':'US'));return (i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)}).join(' ')+' Z';svgEl('path',{d,stroke:'#729076','stroke-width':1,fill:'#dce9cf','fill-opacity':.5},outline)}}}).catch(()=>{});fetch('./data/state_lines.json').then(r=>r.json()).then(lines=>{const g=svgEl('g',{class:'offline-state-boundaries'},region);for(const line of lines){const d=line.map(([lon,lat],i)=>{const [x,y]=fallbackProjection(lon,lat,'US');return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');svgEl('path',{d,stroke:'#9eaa89','stroke-width':.9,'stroke-opacity':.7,fill:'none','pointer-events':'none'},g)}}).catch(()=>{});states.forEach(s=>{const[code,name,lat,lon]=s;let [x,y]=fallbackProjection(lon,lat,code),node=svgEl('circle',{cx:x,cy:y,r:code==='DC'?3.5:7,fill:'#b2c7a5',stroke:'#5b7d61','stroke-width':.8,opacity:.88,role:'button',tabindex:0,'aria-label':`Explore ${name}`},region);node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});stateCenters.set(code,[x,y]);if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ'].includes(code))svgEl('text',{x,y:y+18,class:'map-label'},label,code)});svgEl('text',{x:510,y:570,class:'map-fallback-text','text-anchor':'middle'},label,'Offline map: state boundaries and selectable centroids · shaded polygons load online');renderFlowers();}
+function renderFallback(){stateGeometry.clear();stateLayoutIndex.clear();$('stateClipDefs')?.replaceChildren();const region=$('mapRegions'),label=$('mapLabels'),outline=$('mapOutline');region.replaceChildren();label.replaceChildren();outline.replaceChildren();fetch('./data/usa_coastline.json').then(r=>r.json()).then(c=>{for(const poly of (c.coordinates||[])){for(const ring of poly){if(!ring.length)continue;let d=ring.map(([lon,lat],i)=>{let [x,y]=fallbackProjection(lon,lat,(lon<-153&&lat<30?'HI':lon<-128?'AK':'US'));return (i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1)}).join(' ')+' Z';svgEl('path',{d,stroke:'#729076','stroke-width':1,fill:'#dce9cf','fill-opacity':.5},outline)}}}).catch(()=>{});fetch('./data/state_lines.json').then(r=>r.json()).then(lines=>{const g=svgEl('g',{class:'offline-state-boundaries'},region);for(const line of lines){const d=line.map(([lon,lat],i)=>{const [x,y]=fallbackProjection(lon,lat,'US');return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');svgEl('path',{d,stroke:'#9eaa89','stroke-width':.9,'stroke-opacity':.7,fill:'none','pointer-events':'none'},g)}}).catch(()=>{});states.forEach(s=>{const[code,name,lat,lon]=s;let [x,y]=fallbackProjection(lon,lat,code),node=svgEl('circle',{cx:x,cy:y,r:code==='DC'?3.5:7,fill:'#b2c7a5',stroke:'#5b7d61','stroke-width':.8,opacity:.88,role:'button',tabindex:0,'aria-label':`Explore ${name}`},region);node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});addMapPeek(node,name,stateRecordSummary(code)+' · Click to explore state');stateCenters.set(code,[x,y]);if(['GA','TX','CA','FL','NY','WA','MI','NC','PA','AZ'].includes(code))svgEl('text',{x,y:y+18,class:'map-label'},label,code)});svgEl('text',{x:510,y:570,class:'map-fallback-text','text-anchor':'middle'},label,'Offline map: state boundaries and selectable centroids · shaded polygons load online');renderFlowers();}
 // Decode TopoJSON geometry without third-party JavaScript. Geography from Census-derived US Atlas.
 function decodeTopology(topology){let arcs=(topology.arcs||[]).map(arc=>{let x=0,y=0;return arc.map(([dx,dy])=>{x+=dx;y+=dy;return [x,y]})});const t=topology.transform||{scale:[1,1],translate:[0,0]};const point=xy=>[xy[0]*t.scale[0]+t.translate[0],xy[1]*t.scale[1]+t.translate[1]];
  const ring=ids=>{let result=[];for(const id of ids){let a=arcs[id<0?~id:id];if(!a)continue;let v=id<0?[...a].reverse():a;result.push(...(result.length?v.slice(1):v).map(point))}return result};const polys=[];for(const g of(topology.objects?.states?.geometries||[])){let rings=[];for(const poly of(g.type==='Polygon'?[g.arcs]:g.arcs||[])){for(const rr of poly)rings.push(ring(rr))};const code=FIPS[String(g.id).padStart(2,'0')];if(code)polys.push({code,rings})}return polys}
@@ -107,6 +107,7 @@ for(const item of p){const {code,rings}=item;
  const path=projected.map(r=>r.map((pt,i)=>(i?'L':'M')+pt[0].toFixed(1)+','+pt[1].toFixed(1)).join(' ')+'Z').join(' ');
  const node=svgEl('path',{class:'us-state',d:path,'fill-rule':'evenodd','data-state':code,role:'button',tabindex:0,'aria-label':`Explore ${stateName(code)}`},region);
  node.addEventListener('click',()=>chooseState(code));node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();chooseState(code)}});
+ addMapPeek(node,stateName(code),stateRecordSummary(code)+' · Click to explore state');
  const clip=svgEl('clipPath',{id:`garden-clip-${code}`,clipPathUnits:'userSpaceOnUse'},clips);
  svgEl('path',{d:path,'clip-rule':'evenodd','fill-rule':'evenodd'},clip);
  const slots=createStateSlots(code,projected);stateGeometry.set(code,{rings:projected,slots});
@@ -125,11 +126,13 @@ function renderFlowers(){
   const g=drawFlower(stateLayer(flowers,p.state),x,y,8,(p.answers||[]).length+3,'map',i*.4);
   g.dataset.recordState=p.state;g.setAttribute('aria-label',`Open ${p.subject} poll from ${p.pollster} in ${stateName(p.state)}`);
   g.addEventListener('click',()=>showPoll(p));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPoll(p)}});
+  addMapPeek(g,p.subject||'Published survey',`${stateName(p.state)} · ${p.pollster||'Original poll'} · ${fmt(p.published_at)} · Click for evidence`);
   flowerPos.push({x,y,poll:p});
  });
  const sourceCount=visiblePolls().length,nationalCount=visiblePolls().filter(p=>!p.state).length;
  $('canvasStatus').textContent=sourceCount?`${replayDate?'REPLAY '+fmt(replayDate)+' · ':''}${sourceCount} source-linked surveys · ${toShow.length} state-pinned flowers · ${nationalCount} national surveys in Pollarium`:'No poll feed available — garden environment is decorative';
  document.querySelectorAll('.us-state').forEach(el=>el.classList.toggle('selected',el.dataset.state===currentState));
+ $('gardenMap')?.classList.toggle('map-focus-state',currentState!=='US');
  // A vine connects published records only within the same state and shared issue.
  if($('layerRoots').checked){const groups=new Map();for(const f of flowerPos){if(!f.poll.topic)continue;const key=f.poll.state+':'+f.poll.topic;const a=groups.get(key)||[];a.push(f);groups.set(key,a)}
   for(const [key,points] of groups){const code=key.split(':')[0],topic=key.split(':').slice(1).join(':');for(let i=1;i<points.length;i++){
@@ -140,9 +143,70 @@ function renderFlowers(){
  renderMapEvents();
 }
 
+// Keyboard and pointer visitors get a compact field guide; no extra network calls.
+function stateRecordSummary(code){
+ const cutoff=replayDate||new Date().toISOString().slice(0,10);
+ const listed=(kind)=>(snapshot[kind]||[]).filter(r=>{
+   const date=r.published_at||r.reported_at||r.filing_date||r.date;
+   return r.state===code && Boolean(date) && String(date).slice(0,10)<=cutoff &&
+    (selectedTopic==='all'||r.topic===selectedTopic||(r.topics||[]).includes(selectedTopic));
+ }).length;
+ return `${listed('polls')} polls · ${listed('legislation')} legislative records · ${listed('debates')} debates · ${listed('finance')} finance records`;
+}
+function getMapPeek(){
+ const stage=$('mainCanvas');if(!stage)return null;
+ let peek=stage.querySelector('#mapPeek');
+ if(!peek){peek=document.createElement('div');peek.id='mapPeek';peek.className='map-peek';peek.hidden=true;peek.setAttribute('role','tooltip');stage.appendChild(peek)}
+ return peek;
+}
+function moveMapPeek(node,event){
+ const peek=getMapPeek(),stage=$('mainCanvas');if(!peek||!stage||peek.hidden)return;
+ const bounds=stage.getBoundingClientRect(),rect=node.getBoundingClientRect();
+ const x=(event&&Number.isFinite(event.clientX)?event.clientX:rect.left+rect.width/2)-bounds.left;
+ const y=(event&&Number.isFinite(event.clientY)?event.clientY:rect.top+rect.height/2)-bounds.top;
+ peek.style.left=`${Math.max(8,Math.min(bounds.width-226,x+12))}px`;
+ peek.style.top=`${Math.max(8,Math.min(bounds.height-92,y-82))}px`;
+}
+function addMapPeek(node,title,details){
+ const show=e=>{const peek=getMapPeek();if(!peek)return;peek.replaceChildren();const heading=document.createElement('strong');heading.textContent=title;const body=document.createElement('span');body.textContent=details;peek.append(heading,body);peek.hidden=false;moveMapPeek(node,e)};
+ node.addEventListener('pointerenter',show);node.addEventListener('pointermove',e=>moveMapPeek(node,e));
+ node.addEventListener('pointerleave',()=>{const peek=getMapPeek();if(peek)peek.hidden=true});
+ node.addEventListener('focus',show);node.addEventListener('blur',()=>{const peek=getMapPeek();if(peek)peek.hidden=true});
+}
 function activateMapNode(node,action){node.addEventListener('click',action);node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action()}})}
 function showMapRecord(title,description,url,category,action){$('detailTitle').textContent=title;$('detailIntro').textContent=description;$('detailsBody').innerHTML=`<div class="detail-sub">${esc(category)}</div><p class="detail-small">Information is tied to a source record. Decorative animation does not indicate additional observations.</p>${url?`<a class="detail-link" href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">Original source ↗</a>`:''}`;$('showLatest').textContent=action?'Explore related records ↗':'Explore all sources ↗';$('showLatest').onclick=action||(()=>switchView('sources'))}
 function mapDataRecords(){const cutoff=replayDate||new Date().toISOString().slice(0,10);const visible=r=>{const date=r.published_at||r.reported_at||r.filing_date||r.date||r.created_at;return Boolean(date)&&String(date).slice(0,10)<=cutoff};const inScope=r=>currentState==='US'||r.state===currentState;const topicOK=r=>selectedTopic==='all'||r.topic===selectedTopic||(Array.isArray(r.topics)&&r.topics.includes(selectedTopic));return {finance:(snapshot.finance||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),news:(snapshot.news||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),debates:(snapshot.debates||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url),legislation:(snapshot.legislation||[]).filter(r=>visible(r)&&inScope(r)&&topicOK(r)&&r.state&&r.source_url)} }
+// A flight is contained in a circle that fits inside the jurisdiction.
+// The butterfly silhouette needs ~7.5 SVG units around its body.
+function safeButterflyFlight(code,ordinal){
+ const geo=stateGeometry.get(code);
+ if(!geo)return null; // Fallback has no trustworthy interior geometry.
+ const safeSlots=geo.slots.filter(slot=>slot.clearance>=9.5);
+ if(!safeSlots.length)return null; // Tiny jurisdictions remain accessible via the Debates view.
+ const slot=safeSlots[ordinal%safeSlots.length];
+ const range=Math.max(0,Math.min(14,(slot.clearance-8.5)*.75));
+ return {x:slot.x,y:slot.y,range};
+}
+function drawMapButterfly(parent,x,y,range,offset){
+ const root=svgEl('g',{class:'map-butterfly',transform:`translate(${x.toFixed(2)} ${y.toFixed(2)})`,role:'button',tabindex:0},parent);
+ root.style.setProperty('--fly-range',`${range.toFixed(2)}px`);
+ root.style.setProperty('--flight-delay',`${-offset*.9}s`);
+ const flight=svgEl('g',{class:'butterfly-flight'},root);
+ const flutter=svgEl('g',{class:'butterfly-flutter'},flight);
+ svgEl('path',{d:'M0 -1 Q-4.5 -8 -7.2 -5 Q-9 -1 -4.2 1.2 Q-7.4 6 -3 5.8 Q-1.1 5.4 0 1.2 Z',class:'butterfly-wing wing-left'},flutter);
+ svgEl('path',{d:'M0 -1 Q4.5 -8 7.2 -5 Q9 -1 4.2 1.2 Q7.4 6 3 5.8 Q1.1 5.4 0 1.2 Z',class:'butterfly-wing wing-right'},flutter);
+ svgEl('path',{d:'M0 -4 V4',class:'butterfly-body'},flutter);
+ svgEl('path',{d:'M0 -3 Q-2 -8 -3 -8 M0 -3 Q2 -8 3 -8',class:'butterfly-antennae'},flutter);
+ return root;
+}
+function drawLegislativeBud(parent,x,y,offset){
+ const root=svgEl('g',{class:'map-legislation',transform:`translate(${x.toFixed(2)} ${y.toFixed(2)})`,role:'button',tabindex:0},parent);
+ root.style.setProperty('--leaf-delay',`${-offset*.7}s`);
+ const bud=svgEl('g',{class:'legislation-grow'},root);
+ svgEl('path',{d:'M0 6 Q-1 0 0 -5',stroke:'#5c8063','stroke-width':1.6,fill:'none'},bud);
+ svgEl('path',{d:'M0 0 Q-7 -7 -8 -1 Q-5 5 0 0 M0 -3 Q6 -10 8 -4 Q7 2 0 -3',fill:'#7a9b78',stroke:'#f1f4e6','stroke-width':.7},bud);
+ return root;
+}
 function renderMapEvents(){
  const parent=$('mapEvents');if(!parent)return;parent.replaceChildren();
  const {finance,news,debates,legislation}=mapDataRecords();
@@ -154,14 +218,21 @@ function renderMapEvents(){
  ];
  for(const cfg of configurations){const perState=new Map();for(const record of cfg.records){
   const n=perState.get(record.state)||0;if(n>=4)continue;
-  const position=statePoint(record.state);if(!position)continue;perState.set(record.state,n+1);
+  const flight=cfg.key==='debates'?safeButterflyFlight(record.state,n):null;
+  if(cfg.key==='debates'&&!flight)continue; // Never draw a clipped or off-map butterfly.
+  const position=flight?[flight.x,flight.y]:statePoint(record.state);if(!position)continue;perState.set(record.state,n+1);
   const [x,y]=position;
-  // No animated SVG transform for these glyphs. They are pinned to a state.
-  const node=svgEl('text',{x,y,class:cfg.className,role:'button',tabindex:'0','text-anchor':'middle','aria-label':`${cfg.title} in ${stateName(record.state)}`,'data-record-state':record.state},stateLayer(parent,record.state),cfg.symbol);
+  const layer=stateLayer(parent,record.state);
+  const node=cfg.key==='debates'?drawMapButterfly(layer,x,y,flight.range,n+perState.size):
+   cfg.key==='legislation'?drawLegislativeBud(layer,x,y,n+perState.size):
+   svgEl('text',{x,y,class:cfg.className,role:'button',tabindex:'0','text-anchor':'middle'},layer,cfg.symbol);
+  node.setAttribute('aria-label',`${cfg.title} in ${stateName(record.state)}`);
+  node.dataset.recordState=record.state;
   svgEl('title',{},node,`${cfg.title} · ${stateName(record.state)}`);
   activateMapNode(node,()=>showMapRecord(record.title||record.race||record.candidate||record.committee||cfg.title,`${cfg.description} Published ${fmt(record.published_at||record.reported_at||record.filing_date||record.date)}.`,record.source_url,cfg.title,cfg.action));
+  addMapPeek(node,record.title||record.race||record.candidate||record.committee||cfg.title,`${stateName(record.state)} · ${cfg.title} · ${fmt(record.published_at||record.reported_at||record.filing_date||record.date)} · Click to inspect source`);
  }}
- const status=$('layerDataStatus');if(status)status.textContent=`MAP RECORDS · ${finance.length} finance · ${news.length} news · ${debates.length} debates · ${legislation.length} legislation. State-associated evidence is pinned within borders; national records remain available in their source views.`;
+ const status=$('layerDataStatus');if(status)status.textContent=`MAP RECORDS · ${finance.length} finance · ${news.length} news · ${debates.length} debates · ${legislation.length} legislation. State-associated evidence is pinned within borders; national records remain available in their source views. Animated butterflies and budding leaves are decoration, not new events. Tiny states may omit moving butterflies to avoid clipping; all source records remain in their dedicated views.`;
 }
 
 function recordCard(p){return `<button class="record-card" data-poll="${esc(p.id)}"><span class="petal-icon">✿</span><span class="record-kicker">${esc(p.type||'Survey')} · ${p.state?esc(stateName(p.state)):'National'}</span><strong>${esc(p.subject||'Published observation')}</strong><span class="record-meta">${esc(p.pollster||p.source_name)} · ${fmt(p.published_at)}<br>${pollMetric(p)}</span></button>`}
