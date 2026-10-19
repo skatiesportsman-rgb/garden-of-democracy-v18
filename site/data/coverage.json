@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:10:47Z",
+  "generated_at": "2026-10-19T15:00:54Z",
   "states": [
     {
       "state": "AL",
@@ -257,7 +257,7 @@
       "state": "NH",
       "name": "New Hampshire",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -266,7 +266,7 @@
       "state": "NJ",
       "name": "New Jersey",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -275,7 +275,7 @@
       "state": "NM",
       "name": "New Mexico",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
