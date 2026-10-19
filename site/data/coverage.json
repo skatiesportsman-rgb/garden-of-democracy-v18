@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T01:06:26Z",
+  "generated_at": "2026-10-19T02:54:46Z",
   "states": [
     {
       "state": "AL",
@@ -41,7 +41,7 @@
       "state": "CA",
       "name": "California",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -50,7 +50,7 @@
       "state": "CO",
       "name": "Colorado",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -59,7 +59,7 @@
       "state": "CT",
       "name": "Connecticut",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -68,7 +68,7 @@
       "state": "DE",
       "name": "Delaware",
       "poll_records": 0,
-      "state_legislative_records": 0,
+      "state_legislative_records": 40,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
