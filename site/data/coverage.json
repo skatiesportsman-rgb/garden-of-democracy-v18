@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T19:04:09Z",
+  "generated_at": "2026-10-20T20:55:22Z",
   "states": [
     {
       "state": "AL",
@@ -338,7 +338,7 @@
       "state": "PA",
       "name": "Pennsylvania",
       "poll_records": 0,
-      "state_legislative_records": 78,
+      "state_legislative_records": 113,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 1930,
+  "national_poll_records": 1952,
   "state_poll_records": 5
 }
