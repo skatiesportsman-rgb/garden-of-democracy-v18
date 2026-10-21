@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T13:11:51Z",
+  "generated_at": "2026-10-21T14:57:05Z",
   "states": [
     {
       "state": "AL",
@@ -221,7 +221,7 @@
       "state": "MO",
       "name": "Missouri",
       "poll_records": 0,
-      "state_legislative_records": 42,
+      "state_legislative_records": 44,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -230,7 +230,7 @@
       "state": "MT",
       "name": "Montana",
       "poll_records": 0,
-      "state_legislative_records": 76,
+      "state_legislative_records": 105,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 1952,
+  "national_poll_records": 1956,
   "state_poll_records": 5
 }
