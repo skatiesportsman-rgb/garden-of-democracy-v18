@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T20:55:46Z",
+  "generated_at": "2026-10-21T22:53:25Z",
   "states": [
     {
       "state": "AL",
@@ -356,7 +356,7 @@
       "state": "SC",
       "name": "South Carolina",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 41,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -374,7 +374,7 @@
       "state": "TN",
       "name": "Tennessee",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 79,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
