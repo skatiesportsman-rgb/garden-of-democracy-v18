@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-21T01:07:47Z",
+  "generated_at": "2026-10-21T02:55:37Z",
   "states": [
     {
       "state": "AL",
       "name": "Alabama",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 41,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -14,7 +14,7 @@
       "state": "AK",
       "name": "Alaska",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 62,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -455,7 +455,7 @@
       "state": "DC",
       "name": "Washington, D.C.",
       "poll_records": 0,
-      "state_legislative_records": 72,
+      "state_legislative_records": 89,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
