@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T07:14:58Z",
+  "generated_at": "2026-10-22T09:01:39Z",
   "states": [
     {
       "state": "AL",
@@ -68,7 +68,7 @@
       "state": "DE",
       "name": "Delaware",
       "poll_records": 0,
-      "state_legislative_records": 67,
+      "state_legislative_records": 107,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
