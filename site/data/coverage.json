@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T15:00:44Z",
+  "generated_at": "2026-10-23T16:58:17Z",
   "states": [
     {
       "state": "AL",
@@ -185,7 +185,7 @@
       "state": "MA",
       "name": "Massachusetts",
       "poll_records": 0,
-      "state_legislative_records": 91,
+      "state_legislative_records": 117,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -203,7 +203,7 @@
       "state": "MN",
       "name": "Minnesota",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 80,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -212,7 +212,7 @@
       "state": "MS",
       "name": "Mississippi",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 78,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2028,
+  "national_poll_records": 2032,
   "state_poll_records": 5
 }
