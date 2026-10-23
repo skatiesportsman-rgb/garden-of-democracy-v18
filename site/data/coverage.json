@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T10:54:56Z",
+  "generated_at": "2026-10-23T13:07:08Z",
   "states": [
     {
       "state": "AL",
@@ -113,7 +113,7 @@
       "state": "IL",
       "name": "Illinois",
       "poll_records": 0,
-      "state_legislative_records": 112,
+      "state_legislative_records": 117,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -131,7 +131,7 @@
       "state": "IA",
       "name": "Iowa",
       "poll_records": 0,
-      "state_legislative_records": 48,
+      "state_legislative_records": 50,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2022,
+  "national_poll_records": 2026,
   "state_poll_records": 5
 }
