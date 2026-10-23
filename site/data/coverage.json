@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-23T04:56:09Z",
+  "generated_at": "2026-10-23T07:14:55Z",
   "states": [
     {
       "state": "AL",
       "name": "Alabama",
       "poll_records": 0,
-      "state_legislative_records": 51,
+      "state_legislative_records": 54,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
