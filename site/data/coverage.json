@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T16:52:54Z",
+  "generated_at": "2026-10-24T18:55:17Z",
   "states": [
     {
       "state": "AL",
@@ -194,7 +194,7 @@
       "state": "MI",
       "name": "Michigan",
       "poll_records": 3,
-      "state_legislative_records": 44,
+      "state_legislative_records": 51,
       "debate_records": 1,
       "verified_state_poll_coverage": true,
       "note": null
@@ -221,7 +221,7 @@
       "state": "MO",
       "name": "Missouri",
       "poll_records": 0,
-      "state_legislative_records": 49,
+      "state_legislative_records": 62,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
