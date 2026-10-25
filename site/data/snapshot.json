@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T16:53:18Z",
+  "generated_at": "2026-10-25T18:56:57Z",
   "live_collection_verified": true,
   "data_note": "Every record is published, date-labeled and source-linked. Public API integrations are enabled only after a successful runtime ingestion; gaps are not imputed.",
   "polls": [
@@ -78827,7 +78827,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6432/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78852,7 +78852,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6434/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78878,7 +78878,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6438/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78903,7 +78903,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6436/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78929,7 +78929,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6435/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78956,7 +78956,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6437/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -78982,7 +78982,7 @@
       "date": "2026-10-28",
       "published_at": "2026-10-28",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6433/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79007,7 +79007,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1029/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79032,7 +79032,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1030/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79057,7 +79057,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1027/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79082,7 +79082,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1026/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79107,7 +79107,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB980/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79133,7 +79133,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6243/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79159,7 +79159,7 @@
       "date": "2026-10-27",
       "published_at": "2026-10-27",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1206/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -79791,7 +79791,7 @@
       "date": "2026-10-23",
       "published_at": "2026-10-23",
       "updated_at": "2026-10-23",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6417/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -81975,7 +81975,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5685/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -81998,7 +81998,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H4716/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82021,7 +82021,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H4721/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82044,7 +82044,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6407/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82067,7 +82067,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3155/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82090,7 +82090,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5696/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82113,7 +82113,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6373/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82136,7 +82136,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6404/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82159,7 +82159,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-23",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S2212/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82182,7 +82182,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD4314/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82205,7 +82205,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5702/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82228,7 +82228,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD4310/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82251,7 +82251,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD4312/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82274,7 +82274,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6361/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82297,7 +82297,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3235/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82320,7 +82320,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5701/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82343,7 +82343,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3287/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82366,7 +82366,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3234/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82389,7 +82389,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5703/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82412,7 +82412,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5423/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82435,7 +82435,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5515/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82458,7 +82458,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3288/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82481,7 +82481,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD4311/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82504,7 +82504,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD4313/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82527,7 +82527,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5705/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82550,7 +82550,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5706/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82573,7 +82573,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6370/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82596,7 +82596,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5704/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82619,7 +82619,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/HD6416/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82642,7 +82642,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3097/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82665,7 +82665,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3084/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82688,7 +82688,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S3187/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -82711,7 +82711,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H4747/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -83319,7 +83319,7 @@
       "date": "2026-10-22",
       "published_at": "2026-10-22",
       "updated_at": "2026-10-23",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5707/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -84449,7 +84449,7 @@
       "date": "2026-10-21",
       "published_at": "2026-10-21",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6430/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -84474,7 +84474,7 @@
       "date": "2026-10-21",
       "published_at": "2026-10-21",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6431/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -84499,7 +84499,7 @@
       "date": "2026-10-21",
       "published_at": "2026-10-21",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB6429/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -84522,7 +84522,7 @@
       "date": "2026-10-21",
       "published_at": "2026-10-21",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5699/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -86373,7 +86373,7 @@
       "date": "2026-10-21",
       "published_at": "2026-10-21",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H5700/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96606,7 +96606,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1212/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96632,7 +96632,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/HB5356/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96658,7 +96658,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1211/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96683,7 +96683,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1202/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96708,7 +96708,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1205/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96733,7 +96733,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1201/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96759,7 +96759,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1209/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96788,7 +96788,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1213/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96813,7 +96813,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1208/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96839,7 +96839,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB265/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96865,7 +96865,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1204/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96890,7 +96890,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1207/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -96915,7 +96915,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1210/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -97038,7 +97038,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-24",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB979/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -97064,7 +97064,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1113/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -97529,7 +97529,7 @@
       "date": "2026-10-14",
       "published_at": "2026-10-14",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1134/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -99291,7 +99291,7 @@
       "date": "2026-10-06",
       "published_at": "2026-10-06",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB791/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -99372,7 +99372,7 @@
       "date": "2026-10-06",
       "published_at": "2026-10-06",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1132/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -105117,7 +105117,7 @@
       "date": "2026-09-15",
       "published_at": "2026-09-15",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1133/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -105144,7 +105144,7 @@
       "date": "2026-09-15",
       "published_at": "2026-09-15",
       "updated_at": "2026-10-21",
-      "retrieved_at": "2026-10-24T18:55:14Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB1135/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108553,7 +108553,7 @@
       "date": "2026-08-05",
       "published_at": "2026-08-05",
       "updated_at": "2026-08-06",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB2100/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108576,7 +108576,7 @@
       "date": "2026-08-05",
       "published_at": "2026-08-05",
       "updated_at": "2026-08-06",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB2101/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108648,7 +108648,7 @@
       "date": "2026-08-04",
       "published_at": "2026-08-04",
       "updated_at": "2026-08-06",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB426/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108671,7 +108671,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-06",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB862/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108696,7 +108696,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB1151/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108719,7 +108719,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB459/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108742,7 +108742,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB448/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108765,7 +108765,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB2102/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108788,7 +108788,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB2102/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108811,7 +108811,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-03",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB2101/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -108834,7 +108834,7 @@
       "date": "2026-08-03",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-03",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB2100/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -120059,7 +120059,7 @@
       "date": "2026-05-31",
       "published_at": "2026-05-31",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB187/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121596,7 +121596,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-23",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB874/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121619,7 +121619,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-23",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB398/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121642,7 +121642,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-22",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB769/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121665,7 +121665,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB323/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121688,7 +121688,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB892/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121711,7 +121711,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB657/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121734,7 +121734,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB512/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121757,7 +121757,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB430/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121780,7 +121780,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB803/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121803,7 +121803,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB457/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121826,7 +121826,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB684/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121849,7 +121849,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB727/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121872,7 +121872,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB668/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121895,7 +121895,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB783/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121918,7 +121918,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB597/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -121941,7 +121941,7 @@
       "date": "2026-05-26",
       "published_at": "2026-05-26",
       "updated_at": "2026-06-04",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB191/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127311,7 +127311,7 @@
       "date": "2026-04-29",
       "published_at": "2026-04-29",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD127/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127338,7 +127338,7 @@
       "date": "2026-04-29",
       "published_at": "2026-04-29",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD549/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127365,7 +127365,7 @@
       "date": "2026-04-29",
       "published_at": "2026-04-29",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1211/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127501,7 +127501,7 @@
       "date": "2026-04-28",
       "published_at": "2026-04-28",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB707/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127524,7 +127524,7 @@
       "date": "2026-04-28",
       "published_at": "2026-04-28",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB394/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -127547,7 +127547,7 @@
       "date": "2026-04-28",
       "published_at": "2026-04-28",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB395/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129061,7 +129061,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1353/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129088,7 +129088,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1705/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129115,7 +129115,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD2225/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129142,7 +129142,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD721/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129169,7 +129169,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2173/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -129196,7 +129196,7 @@
       "date": "2026-04-16",
       "published_at": "2026-04-16",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2054/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -130372,7 +130372,7 @@
       "date": "2026-04-13",
       "published_at": "2026-04-13",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD2240/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -130399,7 +130399,7 @@
       "date": "2026-04-13",
       "published_at": "2026-04-13",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2222/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -130426,7 +130426,7 @@
       "date": "2026-04-13",
       "published_at": "2026-04-13",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2131/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -130453,7 +130453,7 @@
       "date": "2026-04-13",
       "published_at": "2026-04-13",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2025/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -130480,7 +130480,7 @@
       "date": "2026-04-13",
       "published_at": "2026-04-13",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD2070/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -131925,7 +131925,7 @@
       "date": "2026-04-08",
       "published_at": "2026-04-08",
       "updated_at": "2026-06-05",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB283/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -132819,7 +132819,7 @@
       "date": "2026-04-06",
       "published_at": "2026-04-06",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD2051/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -137684,7 +137684,7 @@
       "date": "2026-03-20",
       "published_at": "2026-03-20",
       "updated_at": "2026-06-11",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HJ6/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -137886,7 +137886,7 @@
       "date": "2026-03-19",
       "published_at": "2026-03-19",
       "updated_at": "2026-06-11",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HJ5/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -139227,7 +139227,7 @@
       "date": "2026-03-13",
       "published_at": "2026-03-13",
       "updated_at": "2026-06-11",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SJ2/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -139250,7 +139250,7 @@
       "date": "2026-03-13",
       "published_at": "2026-03-13",
       "updated_at": "2026-06-11",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SJ1/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -142388,7 +142388,7 @@
       "date": "2026-03-05",
       "published_at": "2026-03-05",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD287/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -145004,7 +145004,7 @@
       "date": "2026-02-24",
       "published_at": "2026-02-24",
       "updated_at": "2026-07-28",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB596/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -145356,7 +145356,7 @@
       "date": "2026-02-23",
       "published_at": "2026-02-23",
       "updated_at": "2026-06-25",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/SB598/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -146567,7 +146567,7 @@
       "date": "2026-02-12",
       "published_at": "2026-02-12",
       "updated_at": "2026-07-07",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB1082/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -147104,7 +147104,7 @@
       "date": "2026-02-10",
       "published_at": "2026-02-10",
       "updated_at": "2026-07-28",
-      "retrieved_at": "2026-10-24T16:52:52Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/md/bills/2026/HB940/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -147275,7 +147275,7 @@
       "date": "2026-02-09",
       "published_at": "2026-02-09",
       "updated_at": "2026-10-23",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/SD3665/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -151334,7 +151334,7 @@
       "date": "2025-12-31",
       "published_at": "2025-12-31",
       "updated_at": "2026-10-22",
-      "retrieved_at": "2026-10-24T16:52:54Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/H540/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -151489,7 +151489,7 @@
       "date": "2025-12-22",
       "published_at": "2025-12-22",
       "updated_at": "2026-10-23",
-      "retrieved_at": "2026-10-24T16:52:53Z",
+      "retrieved_at": "2026-10-25T18:56:56Z",
       "source_url": "https://openstates.org/ma/bills/194th/S1425/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -152673,7 +152673,7 @@
       "date": "2025-12-02",
       "published_at": "2025-12-02",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB714/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -152698,7 +152698,7 @@
       "date": "2025-12-02",
       "published_at": "2025-12-02",
       "updated_at": "2026-10-15",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB713/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156401,7 +156401,7 @@
       "date": "2025-07-01",
       "published_at": "2025-07-01",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD800/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156428,7 +156428,7 @@
       "date": "2025-07-01",
       "published_at": "2025-07-01",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD977/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156715,7 +156715,7 @@
       "date": "2025-06-24",
       "published_at": "2025-06-24",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1493/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156909,7 +156909,7 @@
       "date": "2025-06-18",
       "published_at": "2025-06-18",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD746/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156936,7 +156936,7 @@
       "date": "2025-06-18",
       "published_at": "2025-06-18",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1963/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156963,7 +156963,7 @@
       "date": "2025-06-18",
       "published_at": "2025-06-18",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD913/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -156990,7 +156990,7 @@
       "date": "2025-06-18",
       "published_at": "2025-06-18",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD532/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157155,7 +157155,7 @@
       "date": "2025-06-12",
       "published_at": "2025-06-12",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1303/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157182,7 +157182,7 @@
       "date": "2025-06-12",
       "published_at": "2025-06-12",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1648/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157209,7 +157209,7 @@
       "date": "2025-06-12",
       "published_at": "2025-06-12",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1330/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157345,7 +157345,7 @@
       "date": "2025-06-10",
       "published_at": "2025-06-10",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1945/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157372,7 +157372,7 @@
       "date": "2025-06-10",
       "published_at": "2025-06-10",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1620/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157399,7 +157399,7 @@
       "date": "2025-06-09",
       "published_at": "2025-06-09",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1551/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157426,7 +157426,7 @@
       "date": "2025-06-09",
       "published_at": "2025-06-09",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD867/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157453,7 +157453,7 @@
       "date": "2025-06-09",
       "published_at": "2025-06-09",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD3/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157480,7 +157480,7 @@
       "date": "2025-06-09",
       "published_at": "2025-06-09",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1445/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157662,7 +157662,7 @@
       "date": "2025-06-05",
       "published_at": "2025-06-05",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1087/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157715,7 +157715,7 @@
       "date": "2025-06-03",
       "published_at": "2025-06-03",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD1549/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157903,7 +157903,7 @@
       "date": "2025-05-30",
       "published_at": "2025-05-30",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD1598/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -157953,7 +157953,7 @@
       "date": "2025-05-27",
       "published_at": "2025-05-27",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD945/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -158026,7 +158026,7 @@
       "date": "2025-05-23",
       "published_at": "2025-05-23",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD270/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -158139,7 +158139,7 @@
       "date": "2025-05-21",
       "published_at": "2025-05-21",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD635/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -158166,7 +158166,7 @@
       "date": "2025-05-21",
       "published_at": "2025-05-21",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:55Z",
       "source_url": "https://openstates.org/me/bills/132/LD742/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -161034,7 +161034,7 @@
       "date": "2025-04-01",
       "published_at": "2025-04-01",
       "updated_at": "2026-10-17",
-      "retrieved_at": "2026-10-24T16:52:51Z",
+      "retrieved_at": "2026-10-25T18:56:54Z",
       "source_url": "https://openstates.org/me/bills/132/LD966/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -162659,7 +162659,7 @@
       "date": "2025-03-05",
       "published_at": "2025-03-05",
       "updated_at": "2026-10-16",
-      "retrieved_at": "2026-10-24T18:55:15Z",
+      "retrieved_at": "2026-10-25T18:56:57Z",
       "source_url": "https://openstates.org/mi/bills/2025-2026/SB121/",
       "note": "State bill or resolution with a documented legislative action; introduction or action does not mean enactment or public support."
     },
@@ -166774,19 +166774,19 @@
       "id": "pollresults",
       "name": "PollResults.org structured poll feed",
       "status": "operational",
-      "last_success": "2026-10-25T16:53:13Z",
+      "last_success": "2026-10-25T18:56:41Z",
       "url": "https://pollresults.org/",
-      "last_attempt": "2026-10-25T16:53:13Z",
+      "last_attempt": "2026-10-25T18:56:41Z",
       "last_error": null
     },
     {
       "id": "votehub",
       "name": "VoteHub polling API",
-      "status": "operational",
+      "status": "temporarily-unavailable",
       "last_success": "2026-10-25T16:53:09Z",
       "url": "https://votehub.com/polls/api/",
-      "last_attempt": "2026-10-25T16:53:09Z",
-      "last_error": null
+      "last_attempt": "2026-10-25T18:56:38Z",
+      "last_error": "HTTP Error 500: Internal Server Error"
     },
     {
       "id": "gdelt",
@@ -166794,7 +166794,7 @@
       "status": "temporarily-unavailable",
       "last_success": null,
       "url": "https://www.gdeltproject.org/data.html",
-      "last_attempt": "2026-10-24T18:55:13Z",
+      "last_attempt": "2026-10-25T18:56:53Z",
       "last_error": "HTTP Error 429: Too Many Requests"
     },
     {
@@ -166803,7 +166803,7 @@
       "status": "temporarily-unavailable",
       "last_success": "2026-10-15T18:59:38Z",
       "url": "https://api.open.fec.gov/developers/",
-      "last_attempt": "2026-10-25T16:53:14Z",
+      "last_attempt": "2026-10-25T18:56:54Z",
       "last_error": "HTTP Error 403: Forbidden"
     },
     {
@@ -166812,16 +166812,16 @@
       "status": "temporarily-unavailable",
       "last_success": "2026-10-15T18:59:40Z",
       "url": "https://api.congress.gov/",
-      "last_attempt": "2026-10-25T16:53:15Z",
+      "last_attempt": "2026-10-25T18:56:54Z",
       "last_error": "HTTP Error 403: Forbidden"
     },
     {
       "id": "openstates",
       "name": "OpenStates state-legislation API",
       "status": "operational",
-      "last_success": "2026-10-25T16:53:18Z",
+      "last_success": "2026-10-25T18:56:57Z",
       "url": "https://docs.openstates.org/api-v3/",
-      "last_attempt": "2026-10-25T16:53:18Z",
+      "last_attempt": "2026-10-25T18:56:57Z",
       "last_error": null
     },
     {
