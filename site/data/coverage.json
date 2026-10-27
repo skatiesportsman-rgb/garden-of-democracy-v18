@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T11:01:08Z",
+  "generated_at": "2026-10-27T13:15:16Z",
   "states": [
     {
       "state": "AL",
@@ -14,7 +14,7 @@
       "state": "AK",
       "name": "Alaska",
       "poll_records": 0,
-      "state_legislative_records": 91,
+      "state_legislative_records": 118,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
