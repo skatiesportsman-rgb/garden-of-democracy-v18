@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T07:27:17Z",
+  "generated_at": "2026-10-28T09:12:04Z",
   "states": [
     {
       "state": "AL",
@@ -365,7 +365,7 @@
       "state": "SD",
       "name": "South Dakota",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 76,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -383,7 +383,7 @@
       "state": "TX",
       "name": "Texas",
       "poll_records": 1,
-      "state_legislative_records": 40,
+      "state_legislative_records": 74,
       "debate_records": 0,
       "verified_state_poll_coverage": true,
       "note": null
@@ -392,7 +392,7 @@
       "state": "UT",
       "name": "Utah",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 80,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
