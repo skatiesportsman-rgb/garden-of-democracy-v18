@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T05:06:39Z",
+  "generated_at": "2026-10-28T07:27:17Z",
   "states": [
     {
       "state": "AL",
@@ -338,7 +338,7 @@
       "state": "PA",
       "name": "Pennsylvania",
       "poll_records": 0,
-      "state_legislative_records": 238,
+      "state_legislative_records": 266,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -356,7 +356,7 @@
       "state": "SC",
       "name": "South Carolina",
       "poll_records": 0,
-      "state_legislative_records": 41,
+      "state_legislative_records": 81,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
