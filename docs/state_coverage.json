@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:23:14Z",
+  "generated_at": "2026-10-30T15:14:51Z",
   "states": [
     {
       "state": "AL",
@@ -437,7 +437,7 @@
       "state": "WI",
       "name": "Wisconsin",
       "poll_records": 0,
-      "state_legislative_records": 119,
+      "state_legislative_records": 155,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -446,7 +446,7 @@
       "state": "WY",
       "name": "Wyoming",
       "poll_records": 0,
-      "state_legislative_records": 75,
+      "state_legislative_records": 115,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
