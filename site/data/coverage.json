@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T23:00:43Z",
+  "generated_at": "2026-10-30T01:28:42Z",
   "states": [
     {
       "state": "AL",
@@ -185,7 +185,7 @@
       "state": "MA",
       "name": "Massachusetts",
       "poll_records": 0,
-      "state_legislative_records": 154,
+      "state_legislative_records": 176,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -194,7 +194,7 @@
       "state": "MI",
       "name": "Michigan",
       "poll_records": 3,
-      "state_legislative_records": 57,
+      "state_legislative_records": 63,
       "debate_records": 1,
       "verified_state_poll_coverage": true,
       "note": null
