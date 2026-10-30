@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T05:08:07Z",
+  "generated_at": "2026-10-30T07:27:40Z",
   "states": [
     {
       "state": "AL",
@@ -284,7 +284,7 @@
       "state": "NY",
       "name": "New York",
       "poll_records": 0,
-      "state_legislative_records": 136,
+      "state_legislative_records": 144,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
