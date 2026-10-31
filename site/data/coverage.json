@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T20:56:49Z",
+  "generated_at": "2026-10-31T22:55:39Z",
   "states": [
     {
       "state": "AL",
@@ -95,7 +95,7 @@
       "state": "HI",
       "name": "Hawaii",
       "poll_records": 0,
-      "state_legislative_records": 80,
+      "state_legislative_records": 120,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -104,7 +104,7 @@
       "state": "ID",
       "name": "Idaho",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 78,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
