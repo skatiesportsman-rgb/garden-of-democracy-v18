@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T14:56:30Z",
+  "generated_at": "2026-10-31T16:58:18Z",
   "states": [
     {
       "state": "AL",
@@ -428,7 +428,7 @@
       "state": "WV",
       "name": "West Virginia",
       "poll_records": 0,
-      "state_legislative_records": 80,
+      "state_legislative_records": 114,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -437,7 +437,7 @@
       "state": "WI",
       "name": "Wisconsin",
       "poll_records": 0,
-      "state_legislative_records": 155,
+      "state_legislative_records": 187,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
