@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T13:15:45Z",
+  "generated_at": "2026-10-31T14:56:30Z",
   "states": [
     {
       "state": "AL",
@@ -401,7 +401,7 @@
       "state": "VT",
       "name": "Vermont",
       "poll_records": 0,
-      "state_legislative_records": 107,
+      "state_legislative_records": 143,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
