@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T01:35:39Z",
+  "generated_at": "2026-11-01T03:08:41Z",
   "states": [
     {
       "state": "AL",
@@ -158,7 +158,7 @@
       "state": "LA",
       "name": "Louisiana",
       "poll_records": 0,
-      "state_legislative_records": 40,
+      "state_legislative_records": 79,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
