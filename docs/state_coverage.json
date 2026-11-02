@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T07:49:54Z",
+  "generated_at": "2026-11-02T09:28:53Z",
   "states": [
     {
       "state": "AL",
@@ -230,7 +230,7 @@
       "state": "MT",
       "name": "Montana",
       "poll_records": 0,
-      "state_legislative_records": 281,
+      "state_legislative_records": 283,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
