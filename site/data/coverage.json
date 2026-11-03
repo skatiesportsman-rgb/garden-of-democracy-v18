@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T23:00:45Z",
+  "generated_at": "2026-11-03T01:30:59Z",
   "states": [
     {
       "state": "AL",
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2182,
+  "national_poll_records": 2197,
   "state_poll_records": 5
 }
