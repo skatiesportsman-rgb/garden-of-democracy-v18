@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T05:22:03Z",
+  "generated_at": "2026-11-04T07:41:52Z",
   "states": [
     {
       "state": "AL",
@@ -140,7 +140,7 @@
       "state": "KS",
       "name": "Kansas",
       "poll_records": 0,
-      "state_legislative_records": 81,
+      "state_legislative_records": 118,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -149,7 +149,7 @@
       "state": "KY",
       "name": "Kentucky",
       "poll_records": 0,
-      "state_legislative_records": 79,
+      "state_legislative_records": 80,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -158,7 +158,7 @@
       "state": "LA",
       "name": "Louisiana",
       "poll_records": 0,
-      "state_legislative_records": 79,
+      "state_legislative_records": 115,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
