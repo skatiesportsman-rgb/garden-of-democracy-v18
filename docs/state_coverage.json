@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T15:21:08Z",
+  "generated_at": "2026-11-05T17:29:23Z",
   "states": [
     {
       "state": "AL",
@@ -293,7 +293,7 @@
       "state": "NC",
       "name": "North Carolina",
       "poll_records": 0,
-      "state_legislative_records": 73,
+      "state_legislative_records": 112,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -311,7 +311,7 @@
       "state": "OH",
       "name": "Ohio",
       "poll_records": 0,
-      "state_legislative_records": 105,
+      "state_legislative_records": 107,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
