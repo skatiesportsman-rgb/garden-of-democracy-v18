@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T23:07:51Z",
+  "generated_at": "2026-11-06T01:37:37Z",
   "states": [
     {
       "state": "AL",
@@ -455,7 +455,7 @@
       "state": "DC",
       "name": "Washington, D.C.",
       "poll_records": 0,
-      "state_legislative_records": 279,
+      "state_legislative_records": 307,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
