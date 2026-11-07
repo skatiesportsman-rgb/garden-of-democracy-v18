@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T01:26:55Z",
+  "generated_at": "2026-11-07T03:11:21Z",
   "states": [
     {
       "state": "AL",
@@ -14,7 +14,7 @@
       "state": "AK",
       "name": "Alaska",
       "poll_records": 0,
-      "state_legislative_records": 158,
+      "state_legislative_records": 160,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -455,7 +455,7 @@
       "state": "DC",
       "name": "Washington, D.C.",
       "poll_records": 0,
-      "state_legislative_records": 307,
+      "state_legislative_records": 322,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
