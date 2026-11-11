@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T05:23:16Z",
+  "generated_at": "2026-11-11T07:41:26Z",
   "states": [
     {
       "state": "AL",
@@ -410,7 +410,7 @@
       "state": "VA",
       "name": "Virginia",
       "poll_records": 0,
-      "state_legislative_records": 129,
+      "state_legislative_records": 161,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
