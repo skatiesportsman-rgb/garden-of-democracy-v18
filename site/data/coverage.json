@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T17:22:55Z",
+  "generated_at": "2026-11-11T19:25:52Z",
   "states": [
     {
       "state": "AL",
@@ -194,7 +194,7 @@
       "state": "MI",
       "name": "Michigan",
       "poll_records": 3,
-      "state_legislative_records": 97,
+      "state_legislative_records": 129,
       "debate_records": 1,
       "verified_state_poll_coverage": true,
       "note": null
