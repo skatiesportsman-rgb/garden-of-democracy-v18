@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T23:01:18Z",
+  "generated_at": "2026-11-11T01:29:22Z",
   "states": [
     {
       "state": "AL",
@@ -311,7 +311,7 @@
       "state": "OH",
       "name": "Ohio",
       "poll_records": 0,
-      "state_legislative_records": 128,
+      "state_legislative_records": 150,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
