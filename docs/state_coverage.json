@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T03:12:57Z",
+  "generated_at": "2026-11-12T05:25:07Z",
   "states": [
     {
       "state": "AL",
@@ -365,7 +365,7 @@
       "state": "SD",
       "name": "South Dakota",
       "poll_records": 0,
-      "state_legislative_records": 76,
+      "state_legislative_records": 112,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
