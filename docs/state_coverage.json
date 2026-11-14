@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T07:31:10Z",
+  "generated_at": "2026-11-14T09:10:42Z",
   "states": [
     {
       "state": "AL",
@@ -383,7 +383,7 @@
       "state": "TX",
       "name": "Texas",
       "poll_records": 1,
-      "state_legislative_records": 152,
+      "state_legislative_records": 189,
       "debate_records": 0,
       "verified_state_poll_coverage": true,
       "note": null
