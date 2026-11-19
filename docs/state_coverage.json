@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T17:23:06Z",
+  "generated_at": "2026-11-19T00:34:02Z",
   "states": [
     {
       "state": "AL",
@@ -113,7 +113,7 @@
       "state": "IL",
       "name": "Illinois",
       "poll_records": 0,
-      "state_legislative_records": 287,
+      "state_legislative_records": 316,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2206,
+  "national_poll_records": 2210,
   "state_poll_records": 5
 }
