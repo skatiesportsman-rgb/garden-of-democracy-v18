@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T20:50:30Z",
+  "generated_at": "2026-11-20T03:34:59Z",
   "states": [
     {
       "state": "AL",
@@ -95,7 +95,7 @@
       "state": "HI",
       "name": "Hawaii",
       "poll_records": 0,
-      "state_legislative_records": 120,
+      "state_legislative_records": 160,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -104,7 +104,7 @@
       "state": "ID",
       "name": "Idaho",
       "poll_records": 0,
-      "state_legislative_records": 78,
+      "state_legislative_records": 118,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -113,7 +113,7 @@
       "state": "IL",
       "name": "Illinois",
       "poll_records": 0,
-      "state_legislative_records": 316,
+      "state_legislative_records": 355,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2210,
+  "national_poll_records": 2211,
   "state_poll_records": 5
 }
