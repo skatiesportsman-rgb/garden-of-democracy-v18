@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:36:39Z",
+  "generated_at": "2026-11-22T02:23:16Z",
   "states": [
     {
       "state": "AL",
@@ -41,7 +41,7 @@
       "state": "CA",
       "name": "California",
       "poll_records": 0,
-      "state_legislative_records": 384,
+      "state_legislative_records": 420,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
