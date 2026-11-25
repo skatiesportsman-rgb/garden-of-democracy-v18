@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T17:59:00Z",
+  "generated_at": "2026-11-25T02:38:41Z",
   "states": [
     {
       "state": "AL",
@@ -446,7 +446,7 @@
       "state": "WY",
       "name": "Wyoming",
       "poll_records": 0,
-      "state_legislative_records": 148,
+      "state_legislative_records": 150,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2212,
+  "national_poll_records": 2213,
   "state_poll_records": 5
 }
