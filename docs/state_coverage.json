@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T14:40:41Z",
+  "generated_at": "2026-11-26T00:33:32Z",
   "states": [
     {
       "state": "AL",
@@ -356,7 +356,7 @@
       "state": "SC",
       "name": "South Carolina",
       "poll_records": 0,
-      "state_legislative_records": 105,
+      "state_legislative_records": 144,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -374,7 +374,7 @@
       "state": "TN",
       "name": "Tennessee",
       "poll_records": 0,
-      "state_legislative_records": 181,
+      "state_legislative_records": 196,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
@@ -383,7 +383,7 @@
       "state": "TX",
       "name": "Texas",
       "poll_records": 1,
-      "state_legislative_records": 191,
+      "state_legislative_records": 227,
       "debate_records": 0,
       "verified_state_poll_coverage": true,
       "note": null
@@ -461,6 +461,6 @@
       "note": "No state-specific estimate inferred from national records"
     }
   ],
-  "national_poll_records": 2213,
+  "national_poll_records": 2220,
   "state_poll_records": 5
 }
