@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T21:45:26Z",
+  "generated_at": "2026-11-27T04:21:24Z",
   "states": [
     {
       "state": "AL",
@@ -419,7 +419,7 @@
       "state": "WA",
       "name": "Washington",
       "poll_records": 0,
-      "state_legislative_records": 80,
+      "state_legislative_records": 120,
       "debate_records": 0,
       "verified_state_poll_coverage": false,
       "note": "No state-specific estimate inferred from national records"
